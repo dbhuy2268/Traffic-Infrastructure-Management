@@ -1,0 +1,100 @@
+thư mục này chứa toàn bộ document liên quan đến đồ án, tổng quan bao gồm:
+
+1. project proposal (chỉnh sửa .docx, xuất .pdf)
+
+	- các nội dung chính của file
+	
+	- thông tin nhóm
+
+	- sơ lược bài toán 
+		+ tên đề tài, 
+		+ mô tả, 
+		+ đối tượng,
+		+ môi trường hoạt động,
+      	+ yêu cầu phần cứng (CPU, RAM, dung lượng tối thiểu, internet, graphics), 
+      	+ phần mềm(ngôn ngữ lập trình, framework, platform, database, ide), 
+       	+ các ràng buộc (coding convention, kiến trúc mô hình ), 
+
+	- giải pháp đề xuất
+		+ các chức năng, 
+	   	+ yêu cầu chức năng, 
+	   	+ yêu cầu phi chức năng, 
+	   	+ mô tả chức năng,
+		+ Kiến trúc phần mềm, đi sâu vào các sơ lược đã nêu ở trên
+
+	- kế hoạch triển khai
+		+ analysis, 
+		+ designing, 
+		+ implementation, 
+		+ testing, 
+		+ maintenance
+
+	- kế hoạch nhân sự & chi phí 
+		+ liệt kê tên thành viên, 
+		+ vai trò, chi phí cho mỗi thành viên,
+
+2. AN - analysis - requirement analysis (chỉnh sửa .docx, xuất .pdf)
+
+	- các nội dung chính của file
+
+	- tham chiếu (mã, tên, phiên bản)
+
+	- thông tin tài liệu (mã, tên, nội dung cập nhật, phiên bản, tác giả, mô tả tài liệu)
+
+	- tổng quan yêu cầu 
+		+ danh sách các package yêu cầu:
+			. yêu cầu chức năng chi tiết
+	   	    . yêu cầu phi chức năng chi tiết
+
+	- đặc tả yêu cầu  (sys)
+		+ sơ đồ use case,
+		+ đặc tả use case,
+		+ prototype
+
+3. FD - functional design - structural design (chỉnh sửa .docx, xuất .pdf)
+	
+	- các nội dung chính của file
+
+	- tham chiếu (mã, tên, phiên bản)
+
+	- thông tin tài liệu (mã, tên, nội dung cập nhật, phiên bản, tác giả, mô tả tài liệu)
+
+	- mô hình dữ liệu 
+		+ đặc tả dữ liệu
+
+	- thiết kế kiến trúc chi tiết 
+		+ sơ đồ kiến trúc,
+		+ sơ đồ lớp
+		+ đặc tả các lớp
+
+	- thiết kế giao diện người dùng 
+		+ site map,
+		+ từng giao diện chi tiết
+
+4. UT_Report - Unit testing report - testing (chỉnh sửa & xuất .xlsx) 
+
+	- n rows, mỗi row sẽ bao gồm các thuộc tính sau của test case:
+		+ stt: số thứ tự test case, vd: 1, 2, 3
+		+ tên test case, vd: insert_specialChar
+		+ mô tả test case, vd: nhập họ tên, có ký tự đặc biệt
+		+ input: dữ liệu đầu vào, vd: ' or '1'='1
+		+ expected output: kết quả dự tính, vd: thông báo lỗi
+		+ method: tên phương thức, vd: user.insert(string name, int age)
+		+ kết quả: là kết quả sau khi chạy test case thực sự, với các giá trị là PASS/ FAILED/ ""
+		+ lý do (dành cho các test case bị FAILED), ví dụ: crash chương trình 
+				do không kiểm tra tên không chứa ký tự đặc biệt
+
+5. UAT - acceptance testing (chỉnh sửa & xuất .xlsx)
+	
+	- n rows, mỗi row sẽ bao gồm các thuộc tính sau của acception test:
+		+ stt
+		+ hạng mục: tên của các hạng mục liên quan đến việc hoàn thành đồ án (FRA, FD, source code, demo, test report, v.v..)
+		+ mô tả
+		+ xác nhận
+		+ ghi chú
+
+	- thông tin nhóm, n thành viên
+
+
+
+** note: các mục và các phần có thể được thay đổi theo yêu cầu gv trong quá trình học
