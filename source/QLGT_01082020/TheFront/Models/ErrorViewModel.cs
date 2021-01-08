@@ -1,6 +1,6 @@
 using System;
 
-namespace TheFront1.Models
+namespace TheFront.Models
 {
     public class ErrorViewModel
     {

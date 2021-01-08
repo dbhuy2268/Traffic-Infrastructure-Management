@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 
-namespace TheFront1.Helper
+namespace TheFront.Helper
 {
     public class TheAPI
     {

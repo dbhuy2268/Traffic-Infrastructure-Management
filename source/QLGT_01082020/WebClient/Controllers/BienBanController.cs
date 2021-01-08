@@ -27,7 +27,6 @@ namespace WebClient.Controllers
         public void Post([FromBody] BienBan bb)
         {
             QLGTDbContext context = new QLGTDbContext();
-            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('TableName', RESEED, 0)");
             context.BienBans.Add(bb);
             context.SaveChanges();
         }

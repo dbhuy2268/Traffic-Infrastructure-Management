@@ -1,19 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using TheFront1.Helper;
-using TheFront1.Models;
+using TheFront.Models;
+using TheFront.Helper;
 
 
-namespace TheFront1.Controllers
+namespace TheFront.Controllers
 {
     public class HomeController : Controller
     {
@@ -75,8 +74,8 @@ namespace TheFront1.Controllers
             HttpClient client = _api.Initial();
 
             using (client)
-            {
-                //Http Post
+{
+//Http Post
                 using (var postTask = await client.PostAsync("api/BienBan", new StringContent(JsonConvert.SerializeObject(bb), Encoding.UTF8, "application/json")))
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();
