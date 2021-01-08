@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TheFront1.Models.ThongTinDangKiemsModel>
+
+@{
+    ViewData["Title"] = "CheckHistory";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Kiểm tra lịch sử đăng kiểm</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trangThaiDangKiem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayDangKiem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayHetHanGCN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.donViKiemDinh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.trangThaiDangKiem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngayDangKiem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GCN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngayHetHanGCN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.donViKiemDinh)
+                </td>
+                <!--<td>-->
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+
+                <!--</td>-->
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="javascript:history.back()">Quay về</a>
+</div>
