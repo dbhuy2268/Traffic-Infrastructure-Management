@@ -86,12 +86,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BienBanController.cs" />
+    <Compile Include="Controllers\HoSoController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
     <Compile Include="Controllers\ThongTinDangKiemsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -101,6 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,7 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\HoSo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataRepository\DataRepository.csproj">
