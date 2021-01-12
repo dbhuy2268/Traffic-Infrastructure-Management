@@ -127,11 +127,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BienBanController.cs" />
+    <Compile Include="Controllers\ChuPhuongTienController.cs" />
     <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Controllers\DichVuDangKyController.cs" />
     <Compile Include="Controllers\HoSoController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
     <Compile Include="Controllers\ThongTinDangKiemsController.cs" />
+    <Compile Include="Controllers\ThongTinThanhToanController.cs" />
+    <Compile Include="Controllers\ThongTinLichHenController.cs" />
     <Compile Include="Controllers\YeuCauXinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,7 +158,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ChuPhuongTien\" />
     <Folder Include="Views\HoSo\" />
+    <Folder Include="Views\ThongTinLichHen\" />
     <Folder Include="Views\YeuCauXin\" />
   </ItemGroup>
   <ItemGroup>
