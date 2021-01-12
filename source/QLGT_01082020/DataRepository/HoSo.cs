@@ -16,6 +16,6 @@ namespace DataRepository
         public string MoTaChiTiet { get; set; }
         public string NoiCap { get; set; }
         public string DiaChiLuu { get; set; }
-
+        public ChuPhuongTien ChuPhuongTien { get; set; }
     }
 }

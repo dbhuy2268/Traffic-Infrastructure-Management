@@ -26,8 +26,6 @@ namespace DataRepository
         public string XiLanh { get; set; }
         public string SoKhung { get; set; }
         public string SoMay { get; set; }
-        public ChuPhuongTien ChuPhuongTien { get; set; }
-
         //public string MaYeuCau { get; set; }
         public virtual ICollection<HoSo> HoSo { get; set; } = new HashSet<HoSo>();
     }
