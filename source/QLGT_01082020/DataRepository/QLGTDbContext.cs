@@ -23,5 +23,7 @@ namespace DataRepository
         public DbSet<BienBan> BienBans { get; set; }
         public DbSet<YeuCauXin> YeuCauXin { get; set; }
         public DbSet<HoSo> HoSo { get; set; }
+        public DbSet<Luat> Luat { get; set; }
+
     }
 }

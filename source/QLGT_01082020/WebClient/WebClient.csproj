@@ -131,6 +131,7 @@
     <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Controllers\DichVuDangKyController.cs" />
     <Compile Include="Controllers\HoSoController.cs" />
+    <Compile Include="Controllers\LuatController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
     <Compile Include="Controllers\ThongTinDangKiemsController.cs" />
     <Compile Include="Controllers\ThongTinThanhToanController.cs" />
@@ -160,6 +161,7 @@
     <Folder Include="Models\" />
     <Folder Include="Views\ChuPhuongTien\" />
     <Folder Include="Views\HoSo\" />
+    <Folder Include="Views\Luat\" />
     <Folder Include="Views\ThongTinLichHen\" />
     <Folder Include="Views\YeuCauXin\" />
   </ItemGroup>

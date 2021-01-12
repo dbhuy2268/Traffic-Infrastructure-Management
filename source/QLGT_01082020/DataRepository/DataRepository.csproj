@@ -58,6 +58,7 @@
     <Compile Include="DichVu.cs" />
     <Compile Include="DichVuDangKy.cs" />
     <Compile Include="HoSo.cs" />
+    <Compile Include="Luat.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PhuongTien.cs" />
     <Compile Include="QLGTDbContext.cs" />
