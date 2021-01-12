@@ -131,7 +131,6 @@
     <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Controllers\DichVuDangKyController.cs" />
     <Compile Include="Controllers\HoSoController.cs" />
-    <Compile Include="Controllers\LuatsController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
     <Compile Include="Controllers\ThongTinDangKiemsController.cs" />
     <Compile Include="Controllers\ThongTinThanhToanController.cs" />
@@ -148,16 +147,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
-    <Content Include="Views\Luats\Create.cshtml" />
-    <Content Include="Views\Luats\Delete.cshtml" />
-    <Content Include="Views\Luats\Details.cshtml" />
-    <Content Include="Views\Luats\Edit.cshtml" />
-    <Content Include="Views\Luats\Index.cshtml" />
-    <Content Include="Views\ThongTinThanhToans\Create.cshtml" />
-    <Content Include="Views\ThongTinThanhToans\Delete.cshtml" />
-    <Content Include="Views\ThongTinThanhToans\Details.cshtml" />
-    <Content Include="Views\ThongTinThanhToans\Edit.cshtml" />
-    <Content Include="Views\ThongTinThanhToans\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
