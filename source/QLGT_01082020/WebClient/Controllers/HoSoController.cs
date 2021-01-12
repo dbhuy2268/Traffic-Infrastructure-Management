@@ -19,9 +19,10 @@ namespace WebClient.Controllers
         }
 
         // GET: api/HoSo/5
-        public string Get(int id)
+        public HoSo Get(int id)
         {
-            return "value";
+            QLGTDbContext context = new QLGTDbContext();
+            return context.HoSo.Find(id);
         }
 
         // POST: api/HoSo
@@ -40,6 +41,10 @@ namespace WebClient.Controllers
         // DELETE: api/HoSo/5
         public void Delete(int id)
         {
+            QLGTDbContext context = new QLGTDbContext();
+            var data = context.HoSo.ToList().Where(x => x.id == id).First();
+            context.HoSo.Remove(data);
+            context.SaveChanges();
         }
     }
 }

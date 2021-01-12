@@ -8,42 +8,41 @@ using DataRepository;
 
 namespace WebClient.Controllers
 {
-    public class YeuCauXinController : ApiController
+    public class DichVuDangKyController : ApiController
     {
-        // GET: api/YeuCauXin
-        public IEnumerable<YeuCauXin> Get()
+        // GET: api/DichVuDangKy
+        public IEnumerable<DichVuDangKy> Get()
         {
             QLGTDbContext context = new QLGTDbContext();
-            var lstYeuCau = context.YeuCauXin.ToList();
-            return lstYeuCau;
+            return context.DichVuDangKies.ToList();
         }
 
-        // GET: api/YeuCauXin/5
-        public YeuCauXin Get(int id)
+        // GET: api/DichVuDangKy/5
+        public DichVuDangKy Get(int id)
         {
             QLGTDbContext context = new QLGTDbContext();
-            return context.YeuCauXin.Find(id);
+            return context.DichVuDangKies.Find(id);
         }
 
-        // POST: api/YeuCauXin 
-        public void Post(YeuCauXin obj)
+        // POST: api/DichVuDangKy
+        public void Post([FromBody] DichVuDangKy bb)
         {
             QLGTDbContext context = new QLGTDbContext();
-            context.YeuCauXin.Add(obj);
+            context.DichVuDangKies.Add(bb);
             context.SaveChanges();
         }
 
-        // PUT: api/YeuCauXin/5
+        // PUT: api/DichVuDangKy/5
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/YeuCauXin/5
+        // DELETE: api/DichVuDangKy/5
         public void Delete(int id)
         {
             QLGTDbContext context = new QLGTDbContext();
-            var data = context.YeuCauXin.ToList().Where(x => x.id == id).First();
-            context.YeuCauXin.Remove(data);
+            var data = context.DichVuDangKies.ToList().Where(x => x.id == id).First();
+            context.DichVuDangKies.Remove(data);
             context.SaveChanges();
         }
     }

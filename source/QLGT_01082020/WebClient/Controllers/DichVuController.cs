@@ -6,44 +6,46 @@ using System.Net.Http;
 using System.Web.Http;
 using DataRepository;
 
+
 namespace WebClient.Controllers
 {
-    public class YeuCauXinController : ApiController
+    public class DichVuController : ApiController
     {
-        // GET: api/YeuCauXin
-        public IEnumerable<YeuCauXin> Get()
+        // GET: api/DichVu
+        public IEnumerable<DichVu> Get()
         {
             QLGTDbContext context = new QLGTDbContext();
-            var lstYeuCau = context.YeuCauXin.ToList();
-            return lstYeuCau;
+            var lstDichVu = context.DichVus.ToList();
+            return lstDichVu;
         }
 
-        // GET: api/YeuCauXin/5
-        public YeuCauXin Get(int id)
+        // GET: api/DichVu/5
+        public DichVu Get(int id)
         {
             QLGTDbContext context = new QLGTDbContext();
-            return context.YeuCauXin.Find(id);
+            return context.DichVus.Find(id);
         }
 
-        // POST: api/YeuCauXin 
-        public void Post(YeuCauXin obj)
+        // POST: api/DichVu
+        public void Post(DichVu DichVu)
         {
             QLGTDbContext context = new QLGTDbContext();
-            context.YeuCauXin.Add(obj);
+            context.DichVus.Add(DichVu);
             context.SaveChanges();
         }
 
-        // PUT: api/YeuCauXin/5
+        // PUT: api/DichVu/5
         public void Put(int id, [FromBody] string value)
         {
+
         }
 
-        // DELETE: api/YeuCauXin/5
+        // DELETE: api/DichVu/5
         public void Delete(int id)
         {
             QLGTDbContext context = new QLGTDbContext();
-            var data = context.YeuCauXin.ToList().Where(x => x.id == id).First();
-            context.YeuCauXin.Remove(data);
+            var data = context.DichVus.ToList().Where(x => x.id == id).First();
+            context.DichVus.Remove(data);
             context.SaveChanges();
         }
     }

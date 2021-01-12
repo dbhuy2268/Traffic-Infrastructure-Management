@@ -127,6 +127,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BienBanController.cs" />
+    <Compile Include="Controllers\DichVuController.cs" />
+    <Compile Include="Controllers\DichVuDangKyController.cs" />
     <Compile Include="Controllers\HoSoController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
     <Compile Include="Controllers\ThongTinDangKiemsController.cs" />
