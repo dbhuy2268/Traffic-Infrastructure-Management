@@ -130,6 +130,7 @@
     <Compile Include="Controllers\ChuPhuongTienController.cs" />
     <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Controllers\DichVuDangKyController.cs" />
+    <Compile Include="Controllers\GiayPhepLaiXeController.cs" />
     <Compile Include="Controllers\HoSoController.cs" />
     <Compile Include="Controllers\LuatController.cs" />
     <Compile Include="Controllers\PhuongTiensController.cs" />
