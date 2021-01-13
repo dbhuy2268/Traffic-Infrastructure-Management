@@ -22,9 +22,14 @@ namespace TheFront.Controllers
         {
             _logger = logger;
         }
+        public IActionResult Index()
+        {
+            //return View();
+            return View("~/Views/Home/Index.cshtml");
+        }
 
         TheAPI _api = new TheAPI();
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Home_DangKiem()
         {
             List<PhuongTiensModel> phuongTiens = new List<PhuongTiensModel>();
             HttpClient client = _api.Initial();
@@ -36,7 +41,7 @@ namespace TheFront.Controllers
             }
             return View(phuongTiens);
         }
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details_DangKiem(int id)
         {
             var phuongTien = new PhuongTiensModel();
             HttpClient client = _api.Initial();
@@ -63,19 +68,19 @@ namespace TheFront.Controllers
             }
             return View(ttdkiem);
         }
-        public ActionResult Create()
+        public ActionResult Create_BB()
         {
             return View();
         }
         [HttpPost]
-        public async Task<BienBanModel> Create(BienBanModel bb)
+        public async Task<BienBanModel> Create_BB(BienBanModel bb)
         {
             BienBanModel o_bb = new BienBanModel();
             HttpClient client = _api.Initial();
 
             using (client)
-{
-//Http Post
+            {
+                //Http Post
                 using (var postTask = await client.PostAsync("api/BienBan", new StringContent(JsonConvert.SerializeObject(bb), Encoding.UTF8, "application/json")))
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();

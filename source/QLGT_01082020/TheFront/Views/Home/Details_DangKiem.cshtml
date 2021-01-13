@@ -1,7 +1,7 @@
 ﻿@model TheFront.Models.PhuongTiensModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details_DangKiem";
 }
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Chi Tiết Phương Tiện</h1>
@@ -96,6 +96,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Xem lịch sử đăng kiếm", "CheckHistory", new { id = Model.id }) |
+    @Html.ActionLink("Xem lịch sử đăng kiếm", "CheckHistory_DangKiem", new { id = Model.id }) |
     <a href="javascript:history.back()">Quay về</a>
 </div>

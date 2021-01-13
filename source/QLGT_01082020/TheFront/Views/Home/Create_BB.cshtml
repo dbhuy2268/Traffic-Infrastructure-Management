@@ -1,7 +1,7 @@
 ﻿@model TheFront.Models.BienBanModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create_BB";
 }
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lập biên bản xử phạt</h1>
@@ -162,8 +162,8 @@
             <span asp-validation-for="NgayRaQDXP" class="text-danger"></span>
         </div>
     </div>
-    <div class="form-group mx-auto justify-content-center">
-        <input onclick="submit_form();" value="Create" class="btn btn-primary" />
+    <div style="width:100%;" class="form-group mx-auto">
+        <input style="width:100%; margin-top:2em;" onclick="submit_form();" value="Create" class="btn btn-primary" />
     </div>
 </form>
 <script>
@@ -201,7 +201,7 @@
 </script>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Home_DangKiem">Back to List</a>
 </div>
 
 @section Scripts {

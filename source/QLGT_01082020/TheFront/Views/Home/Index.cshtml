@@ -1,61 +1,20 @@
-﻿@model IEnumerable<TheFront.Models.PhuongTiensModel>
-
+﻿
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
-<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Phương tiện</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nhanHieu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.loaiPhuongTien)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.soKhung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.soMay)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.thongBaoDanhChoPhuongTien)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nhanHieu)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.loaiPhuongTien)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.soKhung)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.soMay)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.thongBaoDanhChoPhuongTien)
-                </td>
-                <td>
-                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-                    @Html.ActionLink("Chi tiết phương tiện", "Details", new { id = item.id })
-                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    LANDING PAGE
+    <ul>
+        <li><a asp-action="Home_DangKiem">DangKiem</a></li>
+        <li><a asp-action="Create_BB">Xu Phat</a></li>
+    </ul>
+</body>
+</html>

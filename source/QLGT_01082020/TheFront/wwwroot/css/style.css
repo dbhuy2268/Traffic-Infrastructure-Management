@@ -1,0 +1,14 @@
+﻿#more-menu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .more-menu {
+        display: none;
+    }
+
+    #more-menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
