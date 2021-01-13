@@ -21,5 +21,11 @@ namespace DataRepository
         public DbSet<ThongTinLichHen> ThongTinLichHens { get; set; }
         public DbSet<ThongTinThanhToan> ThongTinThanhToans { get; set; }
         public DbSet<BienBan> BienBans { get; set; }
+        public DbSet<YeuCauXin> YeuCauXin { get; set; }
+        public DbSet<HoSo> HoSo { get; set; }
+		public DbSet<GiayPhepLaiXe> GiayPhepLaiXes { get; set; }
+        public DbSet<Luat> Luat { get; set; }
+		
+
     }
 }

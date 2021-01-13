@@ -11,20 +11,26 @@ namespace WebClient.Controllers
     public class ThongTinDangKiemsController : ApiController
     {
         // GET: api/ThongTinDangKiems
-        public IEnumerable<string> Get()
+        public List<ThongTinDangKiem> Get()
         {
-            return new string[] { "value1", "value2" };
+            QLGTDbContext context = new QLGTDbContext();
+            var lstYeuCau = context.ThongTinDangKiems.ToList();
+            return lstYeuCau;
         }
 
         // GET: api/ThongTinDangKiems/5
         public ThongTinDangKiem Get(int id)
         {
-            return null;
+            QLGTDbContext context = new QLGTDbContext();
+            return context.ThongTinDangKiems.Find(id);
         }
 
         // POST: api/ThongTinDangKiems
-        public void Post([FromBody]string value)
+        public void Post(ThongTinDangKiem obj)
         {
+            QLGTDbContext context = new QLGTDbContext();
+            context.ThongTinDangKiems.Add(obj);
+            context.SaveChanges();
         }
 
         // PUT: api/ThongTinDangKiems/5
@@ -35,6 +41,10 @@ namespace WebClient.Controllers
         // DELETE: api/ThongTinDangKiems/5
         public void Delete(int id)
         {
+            QLGTDbContext context = new QLGTDbContext();
+            var data = context.ThongTinDangKiems.ToList().Where(x => x.id == id).First();
+            context.ThongTinDangKiems.Remove(data);
+            context.SaveChanges();
         }
     }
 }
