@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TheFront.Models.DichVuDangKyModel>
+
+@{
+    ViewData["Title"] = "Details_LichHen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Chi tiết dịch vụ</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tongGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soLuong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tongGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soLuong)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="javascript:history.back()">Quay về</a>
+</div>

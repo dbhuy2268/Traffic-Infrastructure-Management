@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TheFront.Models.ThongTinLichHenModel>
+
+@{
+    ViewData["Title"] = "CheckAppointment_DangKiem";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lịch hẹn đăng kiểm</h1>
+
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ngayDangKy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tenNguoiDangKy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.soDienThoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CMND)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.khungGio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ngayDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenNguoiDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.soDienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CMND)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.khungGio)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+<div>
+    <a href="javascript:history.back()">Quay về</a>
+</div>

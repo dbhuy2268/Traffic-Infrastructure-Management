@@ -68,6 +68,36 @@ namespace TheFront.Controllers
             }
             return View(ttdkiem);
         }
+        public async Task<IActionResult> CheckAppointment_DangKiem(int id)
+        {
+            var phuongTien = new PhuongTiensModel();
+            var ttlichhen = new List<ThongTinLichHenModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync($"api/PhuongTiens/{id}");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                phuongTien = JsonConvert.DeserializeObject<PhuongTiensModel>(results);
+                ttlichhen = phuongTien.ThongTinLichHens.ToList();
+            }
+            return View(ttlichhen);
+        }
+        public async Task<IActionResult> Details_LichHen(int id)
+        {
+            var thongtinlichhen = new ThongTinLichHenModel();
+            var chitietlichhen = new List<DichVuDangKyModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync($"/api/ThongTinLichHen/{id}");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                thongtinlichhen = JsonConvert.DeserializeObject<ThongTinLichHenModel>(results);
+                chitietlichhen = thongtinlichhen.DichVuDangKies.ToList();
+            }
+            return View(chitietlichhen);
+        }
+        
+
         public ActionResult Create_BB()
         {
             return View();

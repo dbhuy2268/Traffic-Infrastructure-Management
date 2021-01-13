@@ -13,7 +13,7 @@ namespace TheFront.Models
         public string tenNguoiDangKy { get; set; }
         public string soDienThoai { get; set; }
         public string CMND { get; set; }
-        public string khungGio { get; set; }
+        public DateTime khungGio { get; set; }
         public virtual ICollection<DichVuDangKyModel> DichVuDangKies { get; set; } = new HashSet<DichVuDangKyModel>();
 
     }

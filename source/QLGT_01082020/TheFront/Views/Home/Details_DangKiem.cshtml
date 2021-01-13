@@ -96,6 +96,7 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Xem lịch sử đăng kiếm", "CheckHistory_DangKiem", new { id = Model.id }) |
-    <a href="javascript:history.back()">Quay về</a>
+    <a href="javascript:history.back()">Quay về</a> |
+    @Html.ActionLink("Xem lịch hẹn đăng kiểm", "CheckAppointment_DangKiem", new { id = Model.id }) |
+    @Html.ActionLink("Xem lịch sử đăng kiếm", "CheckHistory_DangKiem", new { id = Model.id })
 </div>
