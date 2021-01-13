@@ -54,7 +54,7 @@ namespace TheFront.Controllers
             return View(phuongTien);
         }
 
-        public async Task<IActionResult> CheckHistory(int id)
+        public async Task<IActionResult> CheckHistory_DangKiem(int id)
         {
             var phuongTien = new PhuongTiensModel();
             var ttdkiem = new List<ThongTinDangKiemsModel>();

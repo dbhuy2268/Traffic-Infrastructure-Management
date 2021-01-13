@@ -25,7 +25,5 @@ namespace DataRepository
         public DbSet<HoSo> HoSo { get; set; }
 		public DbSet<GiayPhepLaiXe> GiayPhepLaiXes { get; set; }
         public DbSet<Luat> Luat { get; set; }
-		
-
     }
 }
