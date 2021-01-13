@@ -8,7 +8,7 @@ namespace TheFront.Models
         public int id { get; set; }
         public int tongGia { get; set; }
         public int soLuong { get; set; }
-        public virtual ThongTinLichHen ThongTinLichHen { get; set; } = new ThongTinLichHen();
+        public virtual ThongTinLichHenModel ThongTinLichHen { get; set; } = new ThongTinLichHenModel();
         public virtual DichVuModel DichVu { get; set; } = new DichVuModel();
     }
 }
