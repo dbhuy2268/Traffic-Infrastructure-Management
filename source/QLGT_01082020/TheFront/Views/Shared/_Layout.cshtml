@@ -21,11 +21,35 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="~/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="~/css/landing/bootstrap.min.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="~/css/landing/LineIcons.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="~/css/landing/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="~/css/landing/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="~/css/landing/animate.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="~/css/landing/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="~/css/landing/style.css">
+
 </head>
 <body style="overflow-y: scroll;">
     <header>
         <nav style="display:none;" class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
-            <a class="navbar-brand d-flex w-25 mr-auto" asp-action="Home_DangKiem"><img style="height: 4em;" src="~/QLGT_BLUE.png" /></a>
+            <a class="navbar-brand d-flex w-25 mr-auto" href="/"><img style="height: 4em;" src="~/QLGT_BLUE.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,10 +59,10 @@
                         <a class="nav-link" href="#">Đăng ký</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="Home_DangKiem">Đăng kiểm</a>
+                        <a class="nav-link" href="/Home/Home_DangKiem">Đăng kiểm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="Create_BB">Xử lý vi phạm</a>
+                        <a class="nav-link" href="/Home/Create_BB">Xử lý vi phạm</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cấp GPLX</a>
@@ -73,7 +97,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                <div>
+                <div style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
                     <ul style="margin-left:10%;" class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Đăng ký</a>
@@ -101,15 +125,18 @@
                         </li>
                     </ul>
                 </div>
-                <ul id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-cog"></i>
-                        </a>
-                    </li>
-                </ul>
+
+                @*<ul id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+            </ul>*@
+                <span id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+                    <partial name="_LoginPartial.cshtml" />
+                </span>
             </div>
-            <button type="button" class="btn btn-primary" style=""><a asp-action="Home_DangKiem">Đăng nhập</a></button>
         </nav>
 
     </header>

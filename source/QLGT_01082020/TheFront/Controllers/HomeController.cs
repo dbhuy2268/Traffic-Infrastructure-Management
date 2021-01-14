@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TheFront.Models;
 using TheFront.Helper;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace TheFront.Controllers
 {
@@ -29,6 +29,7 @@ namespace TheFront.Controllers
         }
 
         TheAPI _api = new TheAPI();
+        [Authorize]
         public async Task<IActionResult> Home_DangKiem()
         {
             List<PhuongTiensModel> phuongTiens = new List<PhuongTiensModel>();
@@ -41,6 +42,7 @@ namespace TheFront.Controllers
             }
             return View(phuongTiens);
         }
+        [Authorize]
         public async Task<IActionResult> Details_DangKiem(int id)
         {
             var phuongTien = new PhuongTiensModel();
@@ -53,7 +55,7 @@ namespace TheFront.Controllers
             }
             return View(phuongTien);
         }
-
+        [Authorize]
         public async Task<IActionResult> CheckHistory_DangKiem(int id)
         {
             var phuongTien = new PhuongTiensModel();
@@ -68,6 +70,7 @@ namespace TheFront.Controllers
             }
             return View(ttdkiem);
         }
+        [Authorize]
         public async Task<IActionResult> CheckAppointment_DangKiem(int id)
         {
             var phuongTien = new PhuongTiensModel();
@@ -82,6 +85,7 @@ namespace TheFront.Controllers
             }
             return View(ttlichhen);
         }
+        [Authorize]
         public async Task<IActionResult> Details_LichHen(int id)
         {
             var thongtinlichhen = new ThongTinLichHenModel();
@@ -98,8 +102,8 @@ namespace TheFront.Controllers
         }
 
 
-       
 
+        [Authorize]
         public ActionResult Create_BB()
         {
             return View();
@@ -122,6 +126,7 @@ namespace TheFront.Controllers
             //return RedirectToAction("Create");
             return o_bb;
         }
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();
