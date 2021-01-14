@@ -65,7 +65,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/Create_BB">Xử lý vi phạm</a>
                     </li>
-                    <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_GPLX" ? "active" : "")">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Cấp GPLX</a>
                     </li>
                     <li class="nav-item">
@@ -107,13 +107,13 @@
                             <a class="nav-link" href="#">Đăng ký</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-action="Home_DangKiem">Đăng kiểm</a>
+                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Đăng kiểm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-action="Create_BB">Xử lý vi phạm</a>
+                            <a class="nav-link @(ViewData["Title"].ToString() == "Create_BB" ? "active" : "")" asp-action="Create_BB">Xử lý vi phạm</a>
                         </li>
-                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_GPLX" ? "active" : "")">
-                            <a class="nav-link" asp-action="Home_GPLX">Cấp GPLX</a>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_GPLX" ? "active" : "")" asp-action="Home_GPLX">Cấp GPLX</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Cảnh báo kẹt xe</a>
