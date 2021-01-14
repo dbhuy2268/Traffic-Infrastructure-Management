@@ -34,10 +34,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đăng ký</a>
                     </li>
-                    <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_DangKiem" ? "active" : "")">
+                    <li class="nav-item">
                         <a class="nav-link" asp-action="Home_DangKiem">Đăng kiểm</a>
                     </li>
-                    <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Create_BB" ? "active" : "")">
+                    <li class="nav-item">
                         <a class="nav-link" asp-action="Create_BB">Xử lý vi phạm</a>
                     </li>
                     <li class="nav-item">
@@ -73,15 +73,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                <div style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "display: none;" : "")">
+                <div>
                     <ul style="margin-left:10%;" class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Đăng ký</a>
                         </li>
-                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_DangKiem" ? "active" : "")">
+                        <li class="nav-item">
                             <a class="nav-link" asp-action="Home_DangKiem">Đăng kiểm</a>
                         </li>
-                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Create_BB" ? "active" : "")">
+                        <li class="nav-item">
                             <a class="nav-link" asp-action="Create_BB">Xử lý vi phạm</a>
                         </li>
                         <li class="nav-item">
@@ -101,7 +101,7 @@
                         </li>
                     </ul>
                 </div>
-                <ul style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "display: none;" : "")" id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+                <ul id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-cog"></i>
@@ -109,7 +109,7 @@
                     </li>
                 </ul>
             </div>
-            <button type="button" class="btn btn-primary" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "" : "display: none;")"><a asp-action="Home_DangKiem">Đăng nhập</a></button>
+            <button type="button" class="btn btn-primary" style=""><a asp-action="Home_DangKiem">Đăng nhập</a></button>
         </nav>
 
     </header>
