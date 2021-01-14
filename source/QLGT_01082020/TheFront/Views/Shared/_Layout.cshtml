@@ -48,6 +48,7 @@
 </head>
 <body style="overflow-y: scroll;">
     <header>
+        @*============================ DUMMY NAV FOR FIXING BUG, CHANGES HERE WON'T APPLY ===================================*@
         <nav style="display:none;" class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
             <a class="navbar-brand d-flex w-25 mr-auto" href="/"><img style="height: 4em;" src="~/QLGT_BLUE.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
@@ -64,7 +65,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/Create_BB">Xử lý vi phạm</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_GPLX" ? "active" : "")">
                         <a class="nav-link" href="#">Cấp GPLX</a>
                     </li>
                     <li class="nav-item">
@@ -91,6 +92,9 @@
                 </ul>
             </div>
         </nav>
+        @*============================ END OF DUMMY NAV ===================================*@
+
+
         <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
             <a href="/" class="navbar-brand d-flex w-25 mr-auto"><img style="height: 4em;" src="~/QLGT_BLUE.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
@@ -108,8 +112,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Create_BB">Xử lý vi phạm</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cấp GPLX</a>
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Home_GPLX" ? "active" : "")">
+                            <a class="nav-link" asp-action="Home_GPLX">Cấp GPLX</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Cảnh báo kẹt xe</a>
