@@ -14,6 +14,8 @@ namespace TheFront.Models
         public string soDienThoai { get; set; }
         public string CMND { get; set; }
         public DateTime khungGio { get; set; }
+        public bool trangThaiXetDuyet { get; set; }
+
         public virtual ICollection<DichVuDangKyModel> DichVuDangKies { get; set; } = new HashSet<DichVuDangKyModel>();
 
     }

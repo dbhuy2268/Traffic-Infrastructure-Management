@@ -101,8 +101,6 @@ namespace TheFront.Controllers
             return View(chitietlichhen);
         }
 
-
-
         [Authorize]
         public ActionResult Create_BB()
         {
@@ -145,8 +143,79 @@ namespace TheFront.Controllers
             }
             return View(gplx);
         }
-        
 
+        [Authorize]
+        public ActionResult Create_HoSo()//sdfsd
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<HoSoModel> Create_HoSo(HoSoModel o_HoSo)
+        {
+            HoSoModel HS = new HoSoModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PostAsync("api/HoSo", new StringContent(JsonConvert.SerializeObject(o_HoSo), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    HS = JsonConvert.DeserializeObject<HoSoModel>(api_response);
+                }
+            }
+            //return RedirectToAction("Create");
+            return HS;
+        }
+
+        [Authorize]
+        public ActionResult Create_YeuCau()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<YeuCauXinModel> Create_YeuCau(YeuCauXinModel o_YC)
+        {
+            YeuCauXinModel YC = new YeuCauXinModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PostAsync("api/YeuCauXin", new StringContent(JsonConvert.SerializeObject(o_YC), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    YC = JsonConvert.DeserializeObject<YeuCauXinModel>(api_response);
+                }
+            }
+            //return RedirectToAction("Create");
+            return YC;
+        }
+
+        [Authorize]
+        public ActionResult Create_LichHen()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<ThongTinLichHenModel> Create_LichHen(ThongTinLichHenModel o_LichHen)
+        {
+            ThongTinLichHenModel LH = new ThongTinLichHenModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PostAsync("api/ThongTinLichHen", new StringContent(JsonConvert.SerializeObject(o_LichHen), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    LH = JsonConvert.DeserializeObject<ThongTinLichHenModel>(api_response);
+                }
+            }
+            //return RedirectToAction("Create");
+            return LH;
+        }
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

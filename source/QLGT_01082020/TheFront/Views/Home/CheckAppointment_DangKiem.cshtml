@@ -31,35 +31,42 @@
                 <th>
                     @Html.DisplayNameFor(model => model.khungGio)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.trangThaiXetDuyet)
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ngayDangKy)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.tenNguoiDangKy)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.soDienThoai)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CMND)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.khungGio)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngayDangKy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenNguoiDangKy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soDienThoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CMND)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khungGio)
+                </td>
+                <td>
+                    @(item.trangThaiXetDuyet == true ? "DA XET DUYET" : "CHUA XET DUYET")
+                    @*@Html.DisplayFor(modelItem => item.trangThaiXetDuyet)*@
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })
+                </td>
+            </tr>
             }
         </tbody>
     </table>

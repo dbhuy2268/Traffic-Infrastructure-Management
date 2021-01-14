@@ -19,6 +19,7 @@ namespace DataRepository
         public string soDienThoai { get; set; }
         public string CMND { get; set; }
         public DateTime khungGio { get; set; }
+        public bool trangThaiXetDuyet { get; set; }
         public virtual ICollection<DichVuDangKy> DichVuDangKies { get; set; } = new HashSet<DichVuDangKy>();
 
     }
