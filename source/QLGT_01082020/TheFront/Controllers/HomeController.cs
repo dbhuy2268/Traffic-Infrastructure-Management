@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using TheFront.Models;
 using TheFront.Helper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace TheFront.Controllers
 {
@@ -215,7 +217,26 @@ namespace TheFront.Controllers
             //return RedirectToAction("Create");
             return LH;
         }
-        
+
+        public async Task<ActionResult> XetDuyet_LichHen(int id = 0)
+        {
+            ThongTinLichHenModel LH = new ThongTinLichHenModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PutAsync("api/ThongTinLichHen/" + id, new StringContent(JsonConvert.SerializeObject(LH), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    LH = JsonConvert.DeserializeObject<ThongTinLichHenModel>(api_response);
+                }
+            }
+            //return RedirectToAction("Create");
+            return View(LH);
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

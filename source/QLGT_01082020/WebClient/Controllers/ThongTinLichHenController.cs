@@ -34,8 +34,13 @@ namespace WebClient.Controllers
         }
 
         // PUT: api/ThongTinLichHen/5
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put(int id)
         {
+            QLGTDbContext context = new QLGTDbContext();
+            var a = context.ThongTinLichHens.Where(x => x.id == id).FirstOrDefault();
+            a.trangThaiXetDuyet = true;
+            context.SaveChanges();
         }
 
         // DELETE: api/ThongTinLichHen/5
