@@ -34,8 +34,11 @@
                             <img src="~/images/icon-1.png" alt="Icon">
                         </div>
                         <div class="about-content media-body">
-                            <h4 class="about-title">Quản lý phương tiện</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
+                            <h4 style="line-height:50px;" class="about-title">Quản lý phương tiện</h4>
+                            <ul>
+                                <li><a asp-action="Create_YeuCau">Đăng ký phương tiện</a></li>
+                                <li><a asp-action="Home_DangKiem">Quản lý thông tin đăng kiểm</a></li>
+                            </ul>
                         </div>
                     </div> <!-- single about -->
                 </div>
@@ -45,19 +48,10 @@
                             <img src="~/images/icon-2.png" alt="Icon">
                         </div>
                         <div class="about-content media-body">
-                            <h4 class="about-title">Xử lý vi phạm giao thông</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
-                        </div>
-                    </div> <!-- single about -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
-                        <div class="about-icon">
-                            <img src="~/images/icon-3.png" alt="Icon">
-                        </div>
-                        <div class="about-content media-body">
-                            <h4 class="about-title">Tra cứu luật</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
+                            <h4 style="line-height:50px;" class="about-title">Thực hiện xử phạt</h4>
+                            <ul>
+                                <li><a asp-action="Create_BB">Lập biên bản xử phạt</a></li>
+                            </ul>
                         </div>
                     </div> <!-- single about -->
                 </div>
@@ -67,11 +61,27 @@
                             <img src="~/images/icon-4.png" alt="Icon">
                         </div>
                         <div class="about-content media-body">
-                            <h4 class="about-title">Xử lý cấp GPLX</h4>
-                            <p class="text">Poorly designed presentations are a thing of the past. Create beautiful and high-quality content that is aligned.</p>
+                            <h4 style="line-height:50px;" class="about-title">Xử lý cấp GPLX</h4>
+                            <ul>
+                                <li><a asp-action="Home_GPLX">Cấp giấy phép lái xe</a></li>
+                            </ul>
                         </div>
                     </div> <!-- single about -->
                 </div>
+                <div class="col-lg-6">
+                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <div class="about-icon">
+                            <img src="~/images/icon-3.png" alt="Icon">
+                        </div>
+                        <div class="about-content media-body">
+                            <h4 style="line-height:50px;" class="about-title">Tiện ích khác</h4>
+                            <ul>
+                                <li><a href="#">Tra cứu luật giao thông đường bộ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
