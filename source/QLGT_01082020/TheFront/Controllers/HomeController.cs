@@ -96,7 +96,20 @@ namespace TheFront.Controllers
             }
             return View(chitietlichhen);
         }
-        
+
+
+        public async Task<IActionResult> Home_GPLX()
+        {
+            List<GiayPhepLaiXeModel> gplx = new List<GiayPhepLaiXeModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync("api/GiayPhepLaiXe");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                gplx =  JsonConvert.DeserializeObject<List<GiayPhepLaiXeModel>>(results);
+            }
+            return View(gplx);
+        }
 
         public ActionResult Create_BB()
         {
