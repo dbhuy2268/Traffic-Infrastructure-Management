@@ -96,7 +96,9 @@ namespace TheFront.Controllers
             }
             return View(chitietlichhen);
         }
-        
+
+
+       
 
         public ActionResult Create_BB()
         {
