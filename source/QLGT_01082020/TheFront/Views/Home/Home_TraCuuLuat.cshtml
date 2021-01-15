@@ -10,10 +10,10 @@
 <form method="post">
     <div class="row form-group">
         <div class="col-md-7">
-            <input class="form-control" id="TextSearchInput" placeholder="Enter text for full text search" />
+            <input class="form-control" id="TextSearchInput" placeholder="Nhập luật cần tra cứu" />
         </div>
         <div class="col-md-5">
-            <input type="submit" value="Search" />
+            <input type="submit" value="Tra cứu" />
         </div>
     </div>
 </form>
@@ -23,13 +23,13 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.id)
+                    ID
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.tenBoLuat)
+                    Tên bộ luật
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.duongDan)
+                    Đường dẫn
                 </th>
                 <th></th>
             </tr>
@@ -51,5 +51,4 @@
             }
         </tbody>
     </table>
-
 </div>
