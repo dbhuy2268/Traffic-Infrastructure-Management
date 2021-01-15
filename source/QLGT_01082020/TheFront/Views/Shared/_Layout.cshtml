@@ -178,7 +178,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Quản lý đăng kiểm</a>
+                            <div class="dropdown">
+                                <a class="dropbtn nav-link @((ViewData["Title"].ToString() == "Create_LichHen") || (ViewData["Title"].ToString() == "Home_DangKiem") ? "active" : "")">
+                                    Quản lý đăng kiểm
+                                    <i class="fas fa-angle-down" style="margin-left: 2px"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a asp-action="Create_LichHen">Tạo lịch hẹn mới</a>
+                                    <a asp-action="CheckAppointment_DangKiem">Xét duyệt lịch hẹn</a>
+                                    <a asp-action="Home_DangKiem">Lịch sử đăng kiểm</a>
+                                </div>
+                            </div>
+                            @*<a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Quản lý đăng kiểm</a>*@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @(ViewData["Title"].ToString() == "Create_BB" ? "active" : "")" asp-action="Create_BB">Xử lý vi phạm</a>
