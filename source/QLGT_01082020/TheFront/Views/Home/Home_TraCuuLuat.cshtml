@@ -39,10 +39,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.id)
+                        <eq-highlight-text text="@Model.Text" value="@(item.id)" />
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.tenBoLuat)
+                        <eq-highlight-text text="@Model.Text" value="@(item.tenBoLuat)" />
                     </td>
                     <td>
                         <a href="@Html.DisplayFor(modelItem => item.duongDan)" target="_blank" rel="noopener noreferrer">Xem</a>
