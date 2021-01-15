@@ -149,6 +149,30 @@ namespace TheFront.Controllers
         }
 
         [Authorize]
+        public ActionResult Create_GPLX()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<GiayPhepLaiXeModel> Create_GPLX(GiayPhepLaiXeModel giay)
+        {
+            GiayPhepLaiXeModel gp = new GiayPhepLaiXeModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PostAsync("api/GiayPhepLaiXe", new StringContent(JsonConvert.SerializeObject(giay), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    gp = JsonConvert.DeserializeObject<GiayPhepLaiXeModel>(api_response);
+                }
+            }
+            //return RedirectToAction("Create");
+            return gp;
+        }
+
+        [Authorize]
         public ActionResult Create_HoSo()//sdfsd
         {
             return View();

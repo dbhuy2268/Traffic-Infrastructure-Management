@@ -1,0 +1,115 @@
+﻿@model TheFront.Models.GiayPhepLaiXeModel
+
+@{
+    ViewData["Title"] = "Create_GPLX";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lập giấy phép giấy xe</h1>
+
+<hr />
+<form id="myform" asp-action="Create_GPLX">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+
+
+        <div class="form-group col-6">
+            <label asp-for="HoTen" class="control-label"></label>
+            <input asp-for="HoTen" class="form-control" required />
+            <span asp-validation-for="HoTen" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label asp-for="DiaChi" class="control-label"></label>
+            <input asp-for="DiaChi" class="form-control" />
+            <span asp-validation-for="DiaChi" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-6">
+            <label asp-for="NgaySinh" class="control-label"></label>
+            <input asp-for="NgaySinh" class="form-control" />
+            <span asp-validation-for="NgaySinh" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label asp-for="NgheNghiep" class="control-label"></label>
+            <input asp-for="NgheNghiep" class="form-control" />
+            <span asp-validation-for="NgheNghiep" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-4">
+            <label asp-for="CMND" class="control-label"></label>
+            <input asp-for="CMND" class="form-control" />
+            <span asp-validation-for="CMND" class="text-danger"></span>
+        </div>
+        <div class="form-group col-4">
+            <label asp-for="NgayCap" class="control-label"></label>
+            <input asp-for="NgayCap" class="form-control" />
+            <span asp-validation-for="NgayCap" class="text-danger"></span>
+        </div>
+        <div class="form-group col-4">
+            <label asp-for="NoiCap" class="control-label"></label>
+            <input asp-for="NoiCap" class="form-control" />
+            <span asp-validation-for="NoiCap" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-4">
+            <label asp-for="SoDienThoai" class="control-label"></label>
+            <input asp-for="SoDienThoai" class="form-control" />
+            <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+        </div>
+        <div class="form-group col-4">
+            <label asp-for="QuocTich" class="control-label"></label>
+            <input asp-for="QuocTich" class="form-control" />
+            <span asp-validation-for="QuocTich" class="text-danger"></span>
+        </div>
+       
+    </div>
+  
+    <div style="width:100%;" class="form-group mx-auto">
+        <input style="width:100%; margin-top:2em;" onclick="submit_form();" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+<script>
+    function submit_form() {
+        let i = 0;
+        let l = $('#myform').submit();
+        if (l) {
+            alert('ajaj');
+            anert();
+            i = 1;
+        }
+        if (i == 1) {
+            $("#myform").trigger('reset');
+        }
+
+        //$("#myform").trigger('reset');
+    }
+    //function submit_form() {
+    //    $("#myform").validate();
+    //    anert();
+    //}
+
+    //$('#myform').submit(function (e) {
+    //    e.preventDefault();
+    //    anert();
+    //});
+
+    function anert() {
+        Swal.fire(
+            'Thành công!',
+            'Tờ khai giấy phép lái xe đã được ghi nhận!',
+            'success'
+        )
+    }
+</script>
+
+<div>
+    <a asp-action="Home_DangKiem">Back to List</a>
+</div>
+
