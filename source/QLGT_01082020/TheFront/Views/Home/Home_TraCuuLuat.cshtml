@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TheFront.Models.LuatModel>
+﻿@model TheFront.Models.LuatViewModel
 
 @{
     ViewData["Title"] = "Home_TraCuuLuat";
@@ -10,10 +10,10 @@
 <form method="post">
     <div class="row form-group">
         <div class="col-md-7">
-            <input class="form-control" id="TextSearchInput" placeholder="Enter text for full text search" />
+            <input asp-for="@Model.Text" class="form-control" id="TextSearchInput" placeholder="Enter text for full text search" />
         </div>
         <div class="col-md-5">
-            <input type="submit" value="Search" />
+            <button class="btn btn-success">Search</button>
         </div>
     </div>
 </form>
@@ -23,19 +23,19 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.id)
+                    id
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.tenBoLuat)
+                    tenBoLuat
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.duongDan)
+                    duongDan
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Luats)
             {
                 <tr>
                     <td>

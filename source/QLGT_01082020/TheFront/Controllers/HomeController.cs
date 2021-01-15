@@ -280,36 +280,38 @@ namespace TheFront.Controllers
         }
 
         [Authorize]
+        [HttpGet]
         public IActionResult Home_TraCuuLuat()
         {
-            List<LuatModel> luats = new List<LuatModel>();
+            var luats = new LuatViewModel();
+            //List<LuatViewModel> luats = new List<LuatViewModel>();
             HttpClient client = _api.Initial();
             HttpResponseMessage res = client.GetAsync("api/Luats").GetAwaiter().GetResult();
             if (res.IsSuccessStatusCode)
             {
                 var results = res.Content.ReadAsStringAsync().Result;
-                luats = JsonConvert.DeserializeObject<List<LuatModel>>(results);
+                luats.Luats = JsonConvert.DeserializeObject<List<LuatModel>>(results).AsQueryable();
             }
             return View(luats);
         }
 
-        //[Authorize]
-        //[HttpPost]
-        //public IActionResult Home_TraCuuLuat(LuatViewModel model)
-        //{
-        //    HttpClient client = _api.Initial();
-        //    HttpResponseMessage res = client.GetAsync("api/Luats").GetAwaiter().GetResult();
-        //    var results = res.Content.ReadAsStringAsync().Result;
-        //    if (!string.IsNullOrEmpty(model.Text))
-        //    {
-        //        model.Luats = (JsonConvert.DeserializeObject<List<LuatModel>>(results)).FullTextSearchQuery(model.Text);
-        //    }
-        //    else
-        //    {
-        //        model.Luats = JsonConvert.DeserializeObject<List<LuatModel>>(results);
-        //    }
-        //    return View(model);
-        //}
+        [Authorize]
+        [HttpPost]
+        public IActionResult Home_TraCuuLuat(LuatViewModel model)
+        {
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = client.GetAsync("api/Luats").GetAwaiter().GetResult();
+            var results = res.Content.ReadAsStringAsync().Result;
+            if (!string.IsNullOrEmpty(model.Text))
+            {
+                model.Luats = (JsonConvert.DeserializeObject<List<LuatModel>>(results)).AsQueryable().FullTextSearchQuery(model.Text);
+            }
+            else
+            {
+                model.Luats = JsonConvert.DeserializeObject<List<LuatModel>>(results).AsQueryable();
+            }
+            return View(model);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

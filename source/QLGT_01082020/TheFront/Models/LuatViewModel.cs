@@ -7,7 +7,7 @@ namespace TheFront.Models
 {
     public class LuatViewModel
     {
-        public List<LuatModel> Luats { get; set; }
+        public IQueryable<LuatModel> Luats { get; set; }
         public string Text { get; set; }
     }
 }
