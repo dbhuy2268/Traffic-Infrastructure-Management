@@ -99,11 +99,6 @@
             display: block;
         }
 
-        /* Change the background color of the dropdown button when the dropdown content is shown */
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
-        }
-
         #logout-desktop {
             border: none;
             background-color: inherit;
@@ -171,10 +166,19 @@
                 <div style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
                     <ul class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Create_YeuCau" ? "active" : "")" asp-action="Create_YeuCau">Đăng ký</a>
+                            <div class="dropdown">
+                                <a class="dropbtn nav-link @(ViewData["Title"].ToString() == "Create_YeuCau" ? "active" : "")">
+                                    Đăng ký xe
+                                    <i class="fas fa-angle-down" style="margin-left: 2px"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a asp-action="Create_YeuCau">Tạo</a>
+                                    <a href="#">Xét duyệt</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Đăng kiểm</a>
+                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Quản lý đăng kiểm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @(ViewData["Title"].ToString() == "Create_BB" ? "active" : "")" asp-action="Create_BB">Xử lý vi phạm</a>
@@ -199,7 +203,7 @@
                         else
                         {
                             <li class="nav-item more-menu">
-                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
+                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng ký</a>
                             </li>
                             <li class="nav-item more-menu">
                                 <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
@@ -230,7 +234,7 @@
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
+                            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng ký</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
@@ -262,7 +266,7 @@
             else
             {
                 <li class="nav-item">
-                    <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
+                    <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng ký</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
