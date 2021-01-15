@@ -65,6 +65,11 @@
                 </td>
                 <td>
                     @Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })
+                    @if (item.trangThaiXetDuyet == false) {
+
+                    @Html.ActionLink("Xét Duyệt", "XetDuyet_LichHen", new { id = item.id });
+                    }
+
                 </td>
             </tr>
             }
@@ -75,3 +80,15 @@
 <div>
     <a href="javascript:history.back()">Quay về</a>
 </div>
+
+@*<script>
+    function RefreshPage() {
+        window.location.reload()
+    }
+    @foreach (var item in Model)
+    {
+        @if (item.trangThaiXetDuyet == false) {
+            @Html.Raw("<script>$(\"#XetDuyet\").on(\"click\", function () { var id = @item.id; $.ajax({ type: 'PUT', url: '/api/ThongTinLichHen/' + id, contentType: 'json', success: function (r) { if (r) { alert(\"Customer record updated.\"); } else { alert(\"Customer not found.\"); } } }); });</script>");
+        }
+    }
+</script>*@
