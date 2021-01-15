@@ -1,0 +1,21 @@
+﻿@model TheFront.Models.YeuCauXinModel
+
+@{
+    ViewData["Title"] = "XetDuyet_YeuCau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>XetDuyet_YeuCau</h1>
+
+<h4>YeuCauXinModel</h4>
+<hr />
+
+<p>Done</p>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

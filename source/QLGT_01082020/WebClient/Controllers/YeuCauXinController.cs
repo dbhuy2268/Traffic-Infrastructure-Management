@@ -34,13 +34,14 @@ namespace WebClient.Controllers
         }
 
         // PUT: api/YeuCauXin/5
-        //public void Put(int id, [FromBody] int value)
-        //{
-        //    QLGTDbContext context = new QLGTDbContext();
-        //    var a = context.YeuCauXin.Where(x => x.id == id).FirstOrDefault();
-        //    //a.t = true;
-        //    context.SaveChanges();
-        //}
+        [HttpPut]
+        public void Put(int id)
+        {
+            QLGTDbContext context = new QLGTDbContext();
+            var a = context.YeuCauXin.Where(x => x.id == id).FirstOrDefault();
+            a.DaXetDuyet = 1;
+            context.SaveChanges();
+        }
 
         // DELETE: api/YeuCauXin/5
         public void Delete(int id)

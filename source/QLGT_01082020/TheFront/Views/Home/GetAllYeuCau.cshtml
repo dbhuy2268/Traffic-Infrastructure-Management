@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TheFront.Models.YeuCauXinModel>
+
+@{
+    ViewData["Title"] = "GetAllYeuCau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetAllYeuCau</h1>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<link rel="stylesheet" href="~/css/dangkyxe/site.css">
+<table id="GetAllYeuCauXinTable" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.TenChuSoHuu)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.CMND_HoChieu)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.SDT)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.LoaiTaiSan)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.LoaiXe)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.NhanHieu)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.MauSon)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.NamSanXuat)
+            </th>
+            <th style=" position: sticky; top: 0;">
+                @Html.DisplayNameFor(model => model.DaXetDuyet)
+            </th>
+            <th style=" position: sticky; top: 0;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenChuSoHuu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CMND_HoChieu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiTaiSan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiXe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanHieu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MauSon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamSanXuat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaXetDuyet)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "XetDuyet_YeuCau", new { id=item.id}) |
+                    @Html.ActionLink("Details", "Details_YeuCau", new {id=item.id }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

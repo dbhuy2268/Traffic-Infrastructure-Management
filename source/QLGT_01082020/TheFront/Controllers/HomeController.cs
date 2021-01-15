@@ -235,6 +235,53 @@ namespace TheFront.Controllers
             //return RedirectToAction("Create");
             return Ok();
         }
+        [Authorize]
+        public async Task<IActionResult> GetAllYeuCau()
+        {
+            List<YeuCauXinModel> YeuCaus = new List<YeuCauXinModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync("api/YeuCauXin");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                YeuCaus = JsonConvert.DeserializeObject<List<YeuCauXinModel>>(results);
+            }
+            return View(YeuCaus);
+        }
+
+
+        [Authorize]
+        public async Task<IActionResult> Details_YeuCau(int id)
+        {
+            var yeuCau = new YeuCauXinModel();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync($"api/YeuCauXin/{id}");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                yeuCau = JsonConvert.DeserializeObject<YeuCauXinModel>(results);
+            }
+            return View(yeuCau);
+        }
+
+        [Authorize]
+        public async Task<ActionResult> XetDuyet_YeuCau(int id = 0)
+        {
+            YeuCauXinModel LH = new YeuCauXinModel();
+            HttpClient client = _api.Initial();
+
+            using (client)
+            {
+                //Http Post
+                using (var postTask = await client.PutAsync("api/YeuCauXin/" + id, new StringContent(JsonConvert.SerializeObject("1"), Encoding.UTF8, "application/json")))
+                {
+                    var api_response = await postTask.Content.ReadAsStringAsync();
+                    LH = JsonConvert.DeserializeObject<YeuCauXinModel>(api_response); 
+                }
+            }
+            //return RedirectToAction("Create");
+            return View(LH);
+        }
 
         [Authorize]
         public ActionResult Create_LichHen()
