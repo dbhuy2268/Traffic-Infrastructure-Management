@@ -35,7 +35,7 @@ namespace WebClient.Controllers
 
         // PUT: api/YeuCauXin/5
         public void Put(int id, [FromBody] string value)
-        {
+        {   
         }
 
         // DELETE: api/YeuCauXin/5

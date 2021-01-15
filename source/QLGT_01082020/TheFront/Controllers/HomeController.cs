@@ -152,22 +152,31 @@ namespace TheFront.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<HoSoModel> Create_HoSo(HoSoModel o_HoSo)
+        public async Task<IActionResult> Create_HoSo([FromBody] List<HoSoModel> o_HoSo_collection)
         {
             HoSoModel HS = new HoSoModel();
             HttpClient client = _api.Initial();
 
             using (client)
             {
-                //Http Post
-                using (var postTask = await client.PostAsync("api/HoSo", new StringContent(JsonConvert.SerializeObject(o_HoSo), Encoding.UTF8, "application/json")))
+                foreach (HoSoModel o_HoSo in o_HoSo_collection)
                 {
-                    var api_response = await postTask.Content.ReadAsStringAsync();
-                    HS = JsonConvert.DeserializeObject<HoSoModel>(api_response);
+                    //Http Post
+                    using (var postTask = await client.PostAsync("api/HoSo", new StringContent(JsonConvert.SerializeObject(o_HoSo), Encoding.UTF8, "application/json")))
+                    {
+                        var api_response = await postTask.Content.ReadAsStringAsync();
+                        HS = JsonConvert.DeserializeObject<HoSoModel>(api_response);
+                        //var status = await postTask.Is
+                        if (!postTask.IsSuccessStatusCode)
+                        {
+                            return BadRequest();
+                        }
+                    }
                 }
             }
+            return Ok();
             //return RedirectToAction("Create");
-            return HS;
+            //return HS;
         }
 
         [Authorize]
@@ -176,7 +185,7 @@ namespace TheFront.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<YeuCauXinModel> Create_YeuCau(YeuCauXinModel o_YC)
+        public async Task<IActionResult> Create_YeuCau([FromBody] YeuCauXinModel o_YC)
         {
             YeuCauXinModel YC = new YeuCauXinModel();
             HttpClient client = _api.Initial();
@@ -188,10 +197,16 @@ namespace TheFront.Controllers
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();
                     YC = JsonConvert.DeserializeObject<YeuCauXinModel>(api_response);
+                    //if (!postTask.IsSuccessStatusCode)
+                    //{
+                    //    return Ok();
+                    //}
+                    postTask.EnsureSuccessStatusCode();
+
                 }
             }
             //return RedirectToAction("Create");
-            return YC;
+            return Ok();
         }
 
         [Authorize]
