@@ -8,6 +8,5 @@ namespace TheFront.Models
         public int id { get; set; }
         public string tenDichVu { get; set; }
         public int donGia { get; set; }
-
     }
 }

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TheFront.Models.LuatModel>
+
+@{
+    ViewData["Title"] = "Home_TraCuuLuat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Tra cứu luật</h1>
+
+<div style="height: 500px; overflow-y:auto; display:block; overflow-x:auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tenBoLuat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.duongDan)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenBoLuat)
+                    </td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.duongDan)" target="_blank" rel="noopener noreferrer">Xem</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

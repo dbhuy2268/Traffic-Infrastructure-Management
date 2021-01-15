@@ -13,6 +13,7 @@ using TheFront.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http.Extensions;
+using Korzh.EasyQuery.Linq;
 
 namespace TheFront.Controllers
 {
@@ -220,6 +221,7 @@ namespace TheFront.Controllers
             return LH;
         }
 
+        [Authorize]
         public async Task<ActionResult> XetDuyet_LichHen(int id = 0)
         {
             ThongTinLichHenModel LH = new ThongTinLichHenModel();
@@ -237,6 +239,38 @@ namespace TheFront.Controllers
             //return RedirectToAction("Create");
             return View(LH);
         }
+
+        [Authorize]
+        public IActionResult Home_TraCuuLuat()
+        {
+            List<LuatModel> luats = new List<LuatModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = client.GetAsync("api/Luats").GetAwaiter().GetResult();
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                luats = JsonConvert.DeserializeObject<List<LuatModel>>(results);
+            }
+            return View(luats);
+        }
+
+        //[Authorize]
+        //[HttpPost]
+        //public IActionResult Home_TraCuuLuat(LuatViewModel model)
+        //{
+        //    HttpClient client = _api.Initial();
+        //    HttpResponseMessage res = client.GetAsync("api/Luats").GetAwaiter().GetResult();
+        //    var results = res.Content.ReadAsStringAsync().Result;
+        //    if (!string.IsNullOrEmpty(model.Text))
+        //    {
+        //        model.Luats = ((IQueryable<LuatModel>)JsonConvert.DeserializeObject<List<LuatModel>>(results)).FullTextSearchQuery(model.Text);
+        //    }
+        //    else
+        //    {
+        //        model.Luats = (IQueryable<LuatModel>)JsonConvert.DeserializeObject<List<LuatModel>>(results);
+        //    }
+        //    return View(model);
+        //}
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
