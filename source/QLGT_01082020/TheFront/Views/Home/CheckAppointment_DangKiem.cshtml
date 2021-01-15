@@ -64,7 +64,7 @@
                     @*@Html.DisplayFor(modelItem => item.trangThaiXetDuyet)*@
                 </td>
                 <td>
-                    @Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })
+                    @*@Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })*@
                     @if (item.trangThaiXetDuyet == false) {
 
                     @Html.ActionLink("Xét Duyệt", "XetDuyet_LichHen", new { id = item.id });
