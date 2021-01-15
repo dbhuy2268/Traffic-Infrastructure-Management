@@ -246,19 +246,19 @@ function addYeuCauXin() {
         HoSo: ListHoSo
     };
     console.log(JSON.stringify(TempYeuCauXin));
-    $.ajax({
-        url: "Create_HoSo",
-        type: "POST",
-        //async: true,
-        data: JSON.stringify(ListHoSo),
-        contentType: "application/json"
-    }).fail(function () {
-        //$('#LoadingModal').trigger('click');
-        $('#FailModal').modal('show');
-        fail_flag = 1;
-        console.log("Gui HS That Bai");
-    }).done(function () {
-        console.log("Gui HS Thanh Cong");
+    //$.ajax({
+    //    url: "Create_HoSo",
+    //    type: "POST",
+    //    //async: true,
+    //    data: JSON.stringify(ListHoSo),
+    //    contentType: "application/json"
+    //}).fail(function () {
+    //    //$('#LoadingModal').trigger('click');
+    //    $('#FailModal').modal('show');
+    //    fail_flag = 1;
+    //    console.log("Gui HS That Bai");
+    //}).done(function () {
+    //    console.log("Gui HS Thanh Cong");
 
         $.ajax({
             url: "Create_YeuCau",
@@ -323,8 +323,8 @@ function addYeuCauXin() {
             //$('.modal-backdrop').fadeOut(150);
             //$('document.body').removeClass("modal-open");
             
+        //})
         })
-    })
 }
 
 
