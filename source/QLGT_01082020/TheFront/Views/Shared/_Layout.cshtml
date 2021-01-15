@@ -97,7 +97,7 @@
 
         <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
             <a href="/" class="navbar-brand d-flex w-25 mr-auto"><img style="height: 4em;" src="~/QLGT_BLUE.png" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3"  style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
@@ -137,12 +137,11 @@
                     </a>
                 </li>
             </ul>*@
-                <span id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+                <span class="nav navbar-nav ml-auto w-25 justify-content-end">
                     <partial name="_LoginPartial.cshtml" />
                 </span>
             </div>
         </nav>
-
     </header>
 
     <div class="container" style="margin-bottom: 100px;">
