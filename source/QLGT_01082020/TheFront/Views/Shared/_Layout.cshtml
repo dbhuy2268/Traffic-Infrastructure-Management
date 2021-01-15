@@ -50,7 +50,22 @@
     <!--====== Style css ======-->
     <link rel="stylesheet" href="~/css/landing/style.css">
 
+    <style>
+        #inner-logo {
+            display: none !important;
+        }
+        @@media (min-width: 768px) {
+            #outer-logo {
+                display: none !important;
+            }
+
+            #inner-logo {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
+
 <body style="overflow-y: scroll;">
     <header>
         @*============================ DUMMY NAV FOR FIXING BUG, CHANGES HERE WON'T APPLY ===================================*@
@@ -100,83 +115,48 @@
         @*============================ END OF DUMMY NAV ===================================*@
 
 
-        <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
-            <a href="/" class="navbar-brand d-flex w-25 mr-auto"><img style="height: 70px;" src="~/QLGT_BLUE.png" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3" style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                <div style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
-                    <ul class="navbar-nav w-100 justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Create_YeuCau" ? "active" : "")" asp-action="Create_YeuCau">Đăng ký</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Đăng kiểm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Create_BB" ? "active" : "")" asp-action="Create_BB">Xử lý vi phạm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"].ToString() == "Home_GPLX" ? "active" : "")" asp-action="Home_GPLX">Cấp GPLX</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Cảnh báo kẹt xe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Điều khiển giao thông</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Tra cứu camera hành trình</a>
-                        </li>
-                        @*<li class="nav-item more-menu">
-            <a class="nav-link disabled" href="#">Cài đặt tài khoản</a>
-        </li>
-        <li class="nav-item more-menu">
-            <a class="nav-link disabled" href="#">Đăng xuất</a>
-        </li>*@
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item more-menu">
-                                <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Cài đặt tài khoản</a>
-                            </li>
-                            <li class="nav-item more-menu">
-                                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Đăng xuất</button>
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item more-menu">
-                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
-                            </li>
-                            <li class="nav-item more-menu">
-                                <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-
-                @*<ul id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+        <a id="outer-logo" href="/" class="navbar-brand d-flex w-25 mr-auto"><img style="height: 70px;" src="~/QLGT_BLUE.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3" style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <a id="inner-logo" href="/" class="navbar-brand d-flex w-25 mr-auto"><img style="height: 70px;" src="~/QLGT_BLUE.png" /></a>
+            <div style="@(ViewData["Title"].ToString() == "Index" ? "display: none;" : "")">
+                <ul class="navbar-nav w-100 justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-cog"></i>
-                        </a>
+                        <a class="nav-link @(ViewData["Title"].ToString() == "Create_YeuCau" ? "active" : "")" asp-action="Create_YeuCau">Đăng ký</a>
                     </li>
-                </ul>*@
-                @*<span class="nav navbar-nav ml-auto w-25 justify-content-end">*@
-                @*<partial name="_LoginPartial.cshtml" />*@
-
-                <ul id="@(ViewData["Title"].ToString() == "Index" ? "" : "more-menu")"
-                    class="@(ViewData["Title"].ToString() == "Index" ? "" : "nav navbar-nav ml-auto w-25 justify-content-end")"
-                    style="@(ViewData["Title"].ToString() == "Index" ? "position: absolute; right: 0; top: 30px; display: flex;" : "")">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"].ToString() == "Home_DangKiem" ? "active" : "")" asp-action="Home_DangKiem">Đăng kiểm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"].ToString() == "Create_BB" ? "active" : "")" asp-action="Create_BB">Xử lý vi phạm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"].ToString() == "Home_GPLX" ? "active" : "")" asp-action="Home_GPLX">Cấp GPLX</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Cảnh báo kẹt xe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Điều khiển giao thông</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Tra cứu camera hành trình</a>
+                    </li>
+                    @*<li class="nav-item more-menu">
+                        <a class="nav-link disabled" href="#">Cài đặt tài khoản</a>
+                    </li>
+                    <li class="nav-item more-menu">
+                        <a class="nav-link disabled" href="#">Đăng xuất</a>
+                    </li>*@
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li class="nav-item">
-                            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)!</a>
+                        <li class="nav-item more-menu">
+                            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Cài đặt tài khoản</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item more-menu">
                             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                                 <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Đăng xuất</button>
                             </form>
@@ -184,17 +164,53 @@
                     }
                     else
                     {
-                        <li class="nav-item">
+                        <li class="nav-item more-menu">
                             <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item more-menu">
                             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
                         </li>
                     }
                 </ul>
-                @* </span>*@
             </div>
-        </nav>
+
+            @*<ul id="more-menu" class="nav navbar-nav ml-auto w-25 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+            </ul>*@
+            @*<span class="nav navbar-nav ml-auto w-25 justify-content-end">*@
+            @*<partial name="_LoginPartial.cshtml" />*@
+
+            <ul id="@(ViewData["Title"].ToString() == "Index" ? "" : "more-menu")"
+                class="@(ViewData["Title"].ToString() == "Index" ? "" : "nav navbar-nav ml-auto w-25 justify-content-end")"
+                style="@(ViewData["Title"].ToString() == "Index" ? "position: absolute; right: 0; top: 30px; display: flex;" : "")">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)!</a>
+                    </li>
+                    <li class="nav-item">
+                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Đăng xuất</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Đăng kí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
+                    </li>
+                }
+            </ul>
+            @* </span>*@
+        </div>
+    </nav>
 
         <ul id="@(ViewData["Title"].ToString() == "Index" ? "" : "more-menu")"
             class="@(ViewData["Title"].ToString() == "Index" ? "" : "nav navbar-nav ml-auto w-25 justify-content-end")"
