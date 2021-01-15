@@ -21,6 +21,8 @@ namespace TheFront.Models
         public string SoKhung { get; set; }
         public string SoMay { get; set; }
         //public string MaYeuCau { get; set; }
+        public int DaXetDuyet { get; set; }
+
         public virtual ICollection<HoSoModel> HoSo { get; set; } = new HashSet<HoSoModel>();
     }
 }
