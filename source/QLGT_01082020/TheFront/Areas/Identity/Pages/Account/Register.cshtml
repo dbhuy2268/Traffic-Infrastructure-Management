@@ -7,12 +7,12 @@
 
 <div class="row">
     <div class="col-md-10 offset-md-1 p-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" style="padding: 12px">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label asp-for="Input.fullName"></label>
+                        <label asp-for="Input.fullName">Họ tên</label>
                         <input asp-for="Input.fullName" class="form-control" />
                         <span asp-validation-for="Input.fullName" class="text-danger"></span>
                     </div>
@@ -26,20 +26,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Input.Password"></label>
+                        <label asp-for="Input.Password">Mật khẩu</label>
                         <input asp-for="Input.Password" class="form-control" />
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Input.ConfirmPassword"></label>
+                        <label asp-for="Input.ConfirmPassword">Xác nhận mật khẩu</label>
                         <input asp-for="Input.ConfirmPassword" class="form-control" />
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Đăng kí</button>
         </form>
     </div>
 </div>
