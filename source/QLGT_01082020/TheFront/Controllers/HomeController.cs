@@ -112,9 +112,9 @@ namespace TheFront.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<BienBanModel> Create_BB(BienBanModel bb)
+        public async Task<IActionResult> Create_BB(BienBanModel bb)
         {
-            BienBanModel o_bb = new BienBanModel();
+            //BienBanModel o_bb = new BienBanModel();
             HttpClient client = _api.Initial();
 
             using (client)
@@ -123,11 +123,11 @@ namespace TheFront.Controllers
                 using (var postTask = await client.PostAsync("api/BienBan", new StringContent(JsonConvert.SerializeObject(bb), Encoding.UTF8, "application/json")))
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();
-                    o_bb = JsonConvert.DeserializeObject<BienBanModel>(api_response);
+                    //o_bb = JsonConvert.DeserializeObject<BienBanModel>(api_response);
                 }
             }
             //return RedirectToAction("Create");
-            return o_bb;
+            return RedirectToAction("Create_BB");
         }
         [Authorize]
         public IActionResult Privacy()
