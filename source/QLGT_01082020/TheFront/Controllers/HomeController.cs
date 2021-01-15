@@ -302,11 +302,11 @@ namespace TheFront.Controllers
         //    var results = res.Content.ReadAsStringAsync().Result;
         //    if (!string.IsNullOrEmpty(model.Text))
         //    {
-        //        model.Luats = ((IQueryable<LuatModel>)JsonConvert.DeserializeObject<List<LuatModel>>(results)).FullTextSearchQuery(model.Text);
+        //        model.Luats = (JsonConvert.DeserializeObject<List<LuatModel>>(results)).FullTextSearchQuery(model.Text);
         //    }
         //    else
         //    {
-        //        model.Luats = (IQueryable<LuatModel>)JsonConvert.DeserializeObject<List<LuatModel>>(results);
+        //        model.Luats = JsonConvert.DeserializeObject<List<LuatModel>>(results);
         //    }
         //    return View(model);
         //}
