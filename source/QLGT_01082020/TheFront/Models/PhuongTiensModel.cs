@@ -20,8 +20,5 @@ namespace TheFront.Models
         public string thongBaoDanhChoPhuongTien { get; set; }
         public virtual ICollection<ThongTinDangKiemsModel> ThongTinDangKiems { get; set; } = new HashSet<ThongTinDangKiemsModel>();
         public virtual ICollection<ThongTinLichHenModel> ThongTinLichHens { get; set; } = new HashSet<ThongTinLichHenModel>();
-
-        //public virtual ICollection<ThongTinLichHen> ThongTinLichHens { get; set; } = new HashSet<ThongTinLichHen>();
-
     }
 }

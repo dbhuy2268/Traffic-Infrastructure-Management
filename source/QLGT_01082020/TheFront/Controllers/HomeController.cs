@@ -44,6 +44,8 @@ namespace TheFront.Controllers
             }
             return View(phuongTiens);
         }
+
+
         [Authorize]
         public async Task<IActionResult> Details_DangKiem(int id)
         {
