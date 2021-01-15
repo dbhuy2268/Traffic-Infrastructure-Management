@@ -104,7 +104,10 @@ function checkContraint() {
         $('#btn_nopToKhai').addClass('button-active');
         $('#btn_nopToKhai').attr('onclick', 'addYeuCauXin();');
         //$('#btn_nopToKhai').attr('data-toggle', 'modal');
-        //$('#btn_nopToKhai').attr('data-target', '#AgreeModal');
+        //$('#btn_nopToKhai').attr('data-target', '#LoadingModal');
+        //$('#btn_nopToKhai').attr('data-backdrop', 'static');
+        //$('#btn_nopToKhai').attr('data-keyboard', 'false');
+ 
     }
     else if ($('#btn_nopToKhai').hasClass('button-active')) {
         console.log('disable');
@@ -113,11 +116,13 @@ function checkContraint() {
         $('#btn_nopToKhai').removeAttr('onclick');
         //$('#btn_nopToKhai').removeAttr('data-toggle');
         //$('#btn_nopToKhai').removeAttr('data-target');
+        //$('#btn_nopToKhai').removeAttr('data-backdrop');
+        //$('#btn_nopToKhai').removeAttr('data-keyboard');
     }
 
-    console.log(isAllFilled);
-    console.log(checkbox_isChecked);
-    console.log(isHavingHoSo);
+    //console.log(isAllFilled);
+    //console.log(checkbox_isChecked);
+    //console.log(isHavingHoSo);
     isAllFilled = true;
 }
 
@@ -127,10 +132,6 @@ function checkHSContraint() {
     let LoaiHoSo = $('#Input_LoaiHoSo').val() !== ''
     let NoiCap = $('#Input_NoiCapHS').val() !== ''
     let MoTaChiTiet = $('#Input_MoTaChiTiet').val() !== ''
-    console.log(MaHoSo);
-    console.log(LoaiHoSo);
-    console.log(NoiCap);
-    console.log(MoTaChiTiet);
 
     if (MaHoSo && LoaiHoSo && NoiCap && MoTaChiTiet) {
         $('#btn_saveHoSo').attr('onclick', 'addRow();');
@@ -219,6 +220,8 @@ function deleteRow(id) {
 
 
 function addYeuCauXin() {
+    $('body').append("<div class='loading'></div>")
+
     let fail_flag = 0;
     var TempYeuCauXin = {
         id: 1,
@@ -250,6 +253,7 @@ function addYeuCauXin() {
         data: JSON.stringify(ListHoSo),
         contentType: "application/json"
     }).fail(function () {
+        //$('#LoadingModal').trigger('click');
         $('#FailModal').modal('show');
         fail_flag = 1;
         console.log("Gui HS That Bai");
@@ -262,10 +266,13 @@ function addYeuCauXin() {
             data: JSON.stringify(TempYeuCauXin),
             contentType: "application/json",
         }).fail(function () {
+            //$('#LoadingModal').trigger('click');
             $('#FailModal').modal('show');
             fail_flag = 1;
             console.log("Gui Yeu cau xin fail")
         }).done(function () {
+            // $('#LoadingModal').modal('hide').closeModal();
+            $('.loading').remove()
             $('#AgreeModal').modal('show');
 
             $('Input_MaYeuCau').val('');
@@ -289,29 +296,56 @@ function addYeuCauXin() {
             ListHoSo = [];
             document.getElementById('tbody').innerHTML = '';
             checkContraint();
+            //$('#AgreeModal').modal('show');
+
+            //$('Input_MaYeuCau').val('');
+            //$('#Input_TenChuSoHuu').val('');
+            //$('#NTNS').val('');
+            //$('#Input_CMND').val('');
+            //$('#Input_NgayCap').val('');
+            //$('#Input_DiaChi').val('');
+            //$('#Input_SoDienThoai').val('');
+            //$('#Input_LoaiTaiSan').val('');
+            //$('#Input_SoLoai').val('');
+            //$('#Input_LoaiXe').val('');
+            //$('#Input_NhanHieu').val('');
+            //$('#Input_MauSon').val('');
+            //$('#Input_NamSX').val('');
+            //$('#Input_XiLanh').val('');
+            //$('#Input_SoKhung').val('');
+            //$('#Input_SoMay').val('');
+            //$('#Input_NoiCap').val('');
+            //$('#argee_checkbox').prop('checked', false);
+            //ListHoSo = [];
+            //document.getElementById('tbody').innerHTML = '';
+            //checkContraint();
+            //$('.modal-backdrop').remove()
+            //$('.modal-backdrop').fadeOut(150);
+            //$('document.body').removeClass("modal-open");
+            
         })
     })
 }
 
 
-function checkConstraint_RegisterButton() {
-    var input_list = document.querySelectorAll('input-register-form');
-    var checkbox_isChecked = $('#argee_checkbox').is(':checked');
+//function checkConstraint_RegisterButton() {
+//    var input_list = document.querySelectorAll('input-register-form');
+//    var checkbox_isChecked = $('#argee_checkbox').is(':checked');
 
-    for (let i of input_list) {
-        console.log(i.nodeValue);
-    }
-    //var listHoSo_isEmpty = ListHoSo.length == 0;
-    //var temp = false;
-    //for (let i of input_list) {
-    //    i.addEventListener('change', function (event) {
-    //        for (let j of input_list) {
-    //            temp = temp && (j.val().length == 0)
-    //        }
+//    for (let i of input_list) {
+//        console.log(i.nodeValue);
+//    }
+//    //var listHoSo_isEmpty = ListHoSo.length == 0;
+//    //var temp = false;
+//    //for (let i of input_list) {
+//    //    i.addEventListener('change', function (event) {
+//    //        for (let j of input_list) {
+//    //            temp = temp && (j.val().length == 0)
+//    //        }
 
-    //    });
+//    //    });
 
-    //}
-}
+//    //}
+//}
 
 
