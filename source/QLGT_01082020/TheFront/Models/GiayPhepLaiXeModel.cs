@@ -14,6 +14,7 @@ namespace TheFront.Models
         public string NoiCap { get; set; }
         public string SoDienThoai { get; set; }
         public string QuocTich { get; set; }
+        public string HangMucGPLX { get; set; }
         public virtual ICollection<GiayPhepLaiXeModel> gplx { get; set; } = new HashSet<GiayPhepLaiXeModel>();
     }
 }
