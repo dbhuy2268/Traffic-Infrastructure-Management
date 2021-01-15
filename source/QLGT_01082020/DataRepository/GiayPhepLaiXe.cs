@@ -20,5 +20,7 @@ namespace DataRepository
         public string NoiCap { get; set; }
         public string SoDienThoai { get; set; }
         public string QuocTich { get; set; }
+        public string HangMucGPLX { get; set; }
+       
     }
 }
