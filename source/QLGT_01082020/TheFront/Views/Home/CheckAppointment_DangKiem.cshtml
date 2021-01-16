@@ -5,6 +5,12 @@
 }
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lịch hẹn đăng kiểm</h1>
+
+
+<div>
+    <a href="javascript:history.back()">Quay về</a>
+</div>
+<hr />
 <div class="table-responsive-sm">
     <table class="table">
         <thead>
@@ -72,20 +78,16 @@
         </tbody>
     </table>
 </div>
-    
 
-<div>
-    <a href="javascript:history.back()">Quay về</a>
-</div>
 
 @*<script>
-    function RefreshPage() {
-        window.location.reload()
-    }
-    @foreach (var item in Model)
-    {
-        @if (item.trangThaiXetDuyet == false) {
-            @Html.Raw("<script>$(\"#XetDuyet\").on(\"click\", function () { var id = @item.id; $.ajax({ type: 'PUT', url: '/api/ThongTinLichHen/' + id, contentType: 'json', success: function (r) { if (r) { alert(\"Customer record updated.\"); } else { alert(\"Customer not found.\"); } } }); });</script>");
+        function RefreshPage() {
+            window.location.reload()
         }
-    }
-</script>*@
+        @foreach (var item in Model)
+        {
+            @if (item.trangThaiXetDuyet == false) {
+                @Html.Raw("<script>$(\"#XetDuyet\").on(\"click\", function () { var id = @item.id; $.ajax({ type: 'PUT', url: '/api/ThongTinLichHen/' + id, contentType: 'json', success: function (r) { if (r) { alert(\"Customer record updated.\"); } else { alert(\"Customer not found.\"); } } }); });</script>");
+            }
+        }
+    </script>*@
