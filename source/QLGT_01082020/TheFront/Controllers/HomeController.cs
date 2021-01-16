@@ -32,6 +32,21 @@ namespace TheFront.Controllers
         }
 
         TheAPI _api = new TheAPI();
+
+        [Authorize]
+        public async Task<IActionResult> Home_BienBan()
+        {
+            List<BienBanModel> bienBans = new List<BienBanModel>();
+            HttpClient client = _api.Initial();
+            HttpResponseMessage res = await client.GetAsync("api/BienBan");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                bienBans = JsonConvert.DeserializeObject<List<BienBanModel>>(results);
+            }
+            return View(bienBans);
+        }
+
         [Authorize]
         public async Task<IActionResult> Home_DangKiem()
         {
@@ -153,9 +168,8 @@ namespace TheFront.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<GiayPhepLaiXeModel> Create_GPLX(GiayPhepLaiXeModel giay)
+        public async Task<IActionResult> Create_GPLX(GiayPhepLaiXeModel giay)
         {
-            GiayPhepLaiXeModel gp = new GiayPhepLaiXeModel();
             HttpClient client = _api.Initial();
 
             using (client)
@@ -164,11 +178,15 @@ namespace TheFront.Controllers
                 using (var postTask = await client.PostAsync("api/GiayPhepLaiXe", new StringContent(JsonConvert.SerializeObject(giay), Encoding.UTF8, "application/json")))
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();
-                    gp = JsonConvert.DeserializeObject<GiayPhepLaiXeModel>(api_response);
-                }
+                    if (!postTask.IsSuccessStatusCode)
+                    {
+                        return BadRequest();
+                        //gp = JsonConvert.DeserializeObject<GiayPhepLaiXeModel>(api_response);
+                    }
+                    }
             }
-            //return RedirectToAction("Create");
-            return gp;
+                //return RedirectToAction("Create");
+                return RedirectToAction("Home_GPLX");
         }
 
         [Authorize]

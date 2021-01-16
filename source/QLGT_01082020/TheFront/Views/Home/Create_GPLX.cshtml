@@ -7,6 +7,11 @@
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lập giấy phép giấy xe</h1>
 
+
+<div>
+    <a asp-action="Home_GPLX">Quay về</a>
+</div>
+
 <hr />
 <form id="myform" asp-action="Create_GPLX">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -19,7 +24,7 @@
         </div>
         <div class="form-group col-6">
             <label asp-for="DiaChi" class="control-label">Địa chỉ</label>
-            <input asp-for="DiaChi" class="form-control" />
+            <input asp-for="DiaChi" class="form-control" required/>
             <span asp-validation-for="DiaChi" class="text-danger"></span>
         </div>
     </div>
@@ -27,12 +32,12 @@
     <div class="row">
         <div class="form-group col-6">
             <label asp-for="NgaySinh" class="control-label">Ngày sinh</label>
-            <input asp-for="NgaySinh" class="form-control" />
+            <input asp-for="NgaySinh" class="form-control" required/>
             <span asp-validation-for="NgaySinh" class="text-danger"></span>
         </div>
         <div class="form-group col-6">
             <label asp-for="NgheNghiep" class="control-label">Nghề nghiệp</label>
-            <input asp-for="NgheNghiep" class="form-control" />
+            <input asp-for="NgheNghiep" class="form-control" required/>
             <span asp-validation-for="NgheNghiep" class="text-danger"></span>
         </div>
     </div>
@@ -40,17 +45,17 @@
     <div class="row">
         <div class="form-group col-4">
             <label asp-for="CMND" class="control-label"></label>
-            <input asp-for="CMND" class="form-control" />
+            <input asp-for="CMND" class="form-control" required/>
             <span asp-validation-for="CMND" class="text-danger"></span>
         </div>
         <div class="form-group col-4">
             <label asp-for="NgayCap" class="control-label">Ngày cấp</label>
-            <input asp-for="NgayCap" class="form-control" />
+            <input asp-for="NgayCap" class="form-control" required/>
             <span asp-validation-for="NgayCap" class="text-danger"></span>
         </div>
         <div class="form-group col-4">
             <label asp-for="NoiCap" class="control-label">Nơi cấp</label>
-            <input asp-for="NoiCap" class="form-control" />
+            <input asp-for="NoiCap" class="form-control" required/>
             <span asp-validation-for="NoiCap" class="text-danger"></span>
         </div>
     </div>
@@ -58,27 +63,27 @@
     <div class="row">
         <div class="form-group col-4">
             <label asp-for="SoDienThoai" class="control-label">Số điện thoại</label>
-            <input asp-for="SoDienThoai" class="form-control" />
+            <input asp-for="SoDienThoai" class="form-control" required/>
             <span asp-validation-for="SoDienThoai" class="text-danger"></span>
         </div>
         <div class="form-group col-4">
             <label asp-for="QuocTich" class="control-label">Quốc tịch</label>
-            <input asp-for="QuocTich" class="form-control" />
+            <input asp-for="QuocTich" class="form-control" required/>
             <span asp-validation-for="QuocTich" class="text-danger"></span>
         </div>
         <div class="form-group col-4">
             <label asp-for="HangMucGPLX" class="control-label">Hạng mục GPLX</label>
-            <input asp-for="HangMucGPLX" class="form-control" />
+            <input asp-for="HangMucGPLX" class="form-control" required/>
             <span asp-validation-for="HangMucGPLX" class="text-danger"></span>
         </div>
 
     </div>
-  
+
     <div style="width:100%;" class="form-group mx-auto">
-        <input style="width:100%; margin-top:2em;" onclick="submit_form();" value="Tạo" class="btn btn-primary" />
+        <input type="submit" style="width:100%; margin-top:2em;" @*onclick="submit_form();"*@ value="Tạo" class="btn btn-primary" />
     </div>
 </form>
-<script>
+@*<script>
     function submit_form() {
         let i = 0;
         let l = $('#myform').submit();
@@ -110,9 +115,6 @@
             'success'
         )
     }
-</script>
+</script>*@
 
-<div>
-    <a asp-action="Home_DangKiem">Quay về quản lý đăng kiểm</a>
-</div>
 

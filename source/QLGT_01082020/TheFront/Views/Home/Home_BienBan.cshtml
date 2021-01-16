@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TheFront.Models.BienBanModel>
+
+@{
+    ViewData["Title"] = "Home_BienBan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Danh sách biên bản</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Ngày vi phạm
+            </th>
+            <th>
+                Đơn vị
+            </th>
+            <th>
+                Họ tên cán bộ 1
+            </th>
+            <th>
+                Họ tên cán bộ 2
+            </th>
+            <th>
+                Họ tên người vi phạm
+            </th>
+            <th>
+                Địa điểm vi phạm
+            </th>
+            <th>
+                Hành vi
+            </th>
+            <th>
+                Biện pháp
+            </th>
+            <th>
+                Ngày ra QD
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayViPham)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonVi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hoten1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTen2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTenVP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiemVP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HanhViVP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BienPhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayRaQDXP)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
