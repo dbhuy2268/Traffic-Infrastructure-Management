@@ -251,7 +251,7 @@ namespace TheFront.Controllers
 
 
         [Authorize]
-        public async Task<IActionResult> Details_YeuCau(int id)
+        public async Task<YeuCauXinModel> Details_YeuCau(int id)
         {
             var yeuCau = new YeuCauXinModel();
             HttpClient client = _api.Initial();
@@ -261,11 +261,11 @@ namespace TheFront.Controllers
                 var results = res.Content.ReadAsStringAsync().Result;
                 yeuCau = JsonConvert.DeserializeObject<YeuCauXinModel>(results);
             }
-            return View(yeuCau);
+            return yeuCau;
         }
 
         [Authorize]
-        public async Task<ActionResult> XetDuyet_YeuCau(int id = 0)
+        public async Task<ActionResult> XetDuyet_YeuCau(int id = 1)
         {
             YeuCauXinModel LH = new YeuCauXinModel();
             HttpClient client = _api.Initial();

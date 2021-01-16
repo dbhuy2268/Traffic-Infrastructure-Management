@@ -73,13 +73,42 @@
     /*    dummy-class*/
 }
 
-.my-table{
-
+#GetAllYeuCauXinTable {
+    max-height: 300px;
+    overflow-y: scroll;
+    border: none;
 }
-.my-table thead th{
 
+tbody {
+    max-height: 300px;
+    overflow: scroll;
+    border: none;
 }
 
+#GetAllYeuCauXinTable th{
+    border-collapse: collapse;
+    background-color: #808080;
+    color: white;
+    line-height: 50px;
+    padding: 7px;
+}
+
+#GetAllYeuCauXinTable tr td {
+    line-height: 40px;
+    padding: 6px;
+}
+
+#GetAllYeuCauXinTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#GetAllYeuCauXinTable tr:hover {
+    background-color: #ddd;
+}
+
+@media (min-width: 576px) .modal-dialog {
+    max-width: 1000px !important;
+}
 
 
 /* the loading */
