@@ -5,8 +5,7 @@
 }
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Lịch hẹn đăng kiểm</h1>
-
-<body>
+<div class="table-responsive-sm">
     <table class="table">
         <thead>
             <tr>
@@ -37,42 +36,43 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ngayDangKy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.tenNguoiDangKy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.soDienThoai)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CMND)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.khungGio)
-                </td>
-                <td>
-                    @(item.trangThaiXetDuyet == true ? "Đã xét duyệt" : "Chưa xét duyệt")
-                    @*@Html.DisplayFor(modelItem => item.trangThaiXetDuyet)*@
-                </td>
-                <td>
-                    @*@Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })*@
-                    @if (item.trangThaiXetDuyet == false) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ngayDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenNguoiDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.soDienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CMND)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.khungGio)
+                    </td>
+                    <td>
+                        @(item.trangThaiXetDuyet == true ? "Đã xét duyệt" : "Chưa xét duyệt")
+                        @*@Html.DisplayFor(modelItem => item.trangThaiXetDuyet)*@
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Chi tiết lịch hẹn", "Details_LichHen", new { id=item.id })*@
+                        @if (item.trangThaiXetDuyet == false)
+                        {
+                            @Html.ActionLink("Xét duyệt", "XetDuyet_LichHen", new { id = item.id });
+                        }
 
-                    @Html.ActionLink("Xét Duyệt", "XetDuyet_LichHen", new { id = item.id });
-                    }
-
-                </td>
-            </tr>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
-</body>
+</div>
+    
 
 <div>
     <a href="javascript:history.back()">Quay về</a>
