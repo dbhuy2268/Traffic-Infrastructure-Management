@@ -110,6 +110,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="XetDuyet_YeuCau">Edit</a>
+    @Html.ActionLink("Duyệt", "XetDuyet_YeuCau", new { id = Model.id })
     <a asp-action="Index">Back to List</a>
 </div>
