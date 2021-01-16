@@ -20,13 +20,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="TenChuSoHuu" class="control-label">Tên chủ sở hữu: </label>
-                <input asp-for="TenChuSoHuu" class="form-control input-register-form" id="Input_TenChuSoHuu" pattern="/^[A-Za-z0-9 ]+$/" required />
+                <input asp-for="TenChuSoHuu" class="form-control input-register-form" id="Input_TenChuSoHuu" required />
                 <span asp-validation-for="TenChuSoHuu" class="text-danger"></span>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label asp-for="CMND_HoChieu" class="control-label">Số CMND/CCCD/HoChieu:</label>
-                    <input asp-for="CMND_HoChieu" class="form-control input-register-form" id="Input_CMND" pattern="^[0-9]*$" required />
+                    <input asp-for="CMND_HoChieu" class="form-control input-register-form" id="Input_CMND" required />
                     <span asp-validation-for="CMND_HoChieu" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
@@ -38,12 +38,12 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label asp-for="DiaChiThuongTru" class="control-label">Địa chỉ thường trú: </label>
-                    <input asp-for="DiaChiThuongTru" class="form-control input-register-form" id="Input_DiaChi" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="DiaChiThuongTru" class="form-control input-register-form" id="Input_DiaChi" required />
                     <span asp-validation-for="DiaChiThuongTru" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="SDT" class="control-label">Số điện thoại: </label>
-                    <input asp-for="SDT" class="form-control input-register-form" id="Input_SoDienThoai" pattern="^[0-9]*$" required />
+                    <input asp-for="SDT" class="form-control input-register-form" id="Input_SoDienThoai" required />
                     <span asp-validation-for="SDT" class="text-danger"></span>
                 </div>
             </div>
@@ -51,51 +51,51 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <label asp-for="LoaiTaiSan" class="control-label">Loại tài sản: </label>
-                    <input asp-for="LoaiTaiSan" class="form-control input-register-form" id="Input_LoaiTaiSan" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="LoaiTaiSan" class="form-control input-register-form" id="Input_LoaiTaiSan" required />
                     <span asp-validation-for="LoaiTaiSan" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="SoLoai" class="control-label">Số loại: </label>
-                    <input asp-for="SoLoai" class="form-control input-register-form" id="Input_SoLoai" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="SoLoai" class="form-control input-register-form" id="Input_SoLoai" required />
                     <span asp-validation-for="SoLoai" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="LoaiXe" class="control-label">Loại xe: </label>
-                    <input asp-for="LoaiXe" class="form-control input-register-form" id="Input_LoaiXe" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="LoaiXe" class="form-control input-register-form" id="Input_LoaiXe" required />
                     <span asp-validation-for="LoaiXe" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-3">
                     <label class="control-label">Nhãn hiệu: </label>
-                    <input asp-for="NhanHieu" class="form-control input-register-form" id="Input_NhanHieu" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="NhanHieu" class="form-control input-register-form" id="Input_NhanHieu" required />
                     <span asp-validation-for="NhanHieu" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-3">
                     <label class="control-label">Màu sơn: </label>
-                    <input asp-for="MauSon" class="form-control input-register-form" id="Input_MauSon" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="MauSon" class="form-control input-register-form" id="Input_MauSon" required />
                     <span asp-validation-for="MauSon" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-3">
                     <label class="control-label">Năm SX: </label>
-                    <input asp-for="NamSanXuat" class="form-control input-register-form" id="Input_NamSX" pattern="^[0-9]*$" required />
+                    <input asp-for="NamSanXuat" class="form-control input-register-form" id="Input_NamSX" required />
                     <span asp-validation-for="NamSanXuat" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-3">
                     <label class="control-label">Xi lanh: </label>
-                    <input asp-for="XiLanh" class="form-control input-register-form" id="Input_XiLanh" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="XiLanh" class="form-control input-register-form" id="Input_XiLanh" required />
                     <span asp-validation-for="XiLanh" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label class="control-label">Số Khung: </label>
-                    <input asp-for="SoKhung" class="form-control input-register-form" id="Input_SoKhung" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="SoKhung" class="form-control input-register-form" id="Input_SoKhung" required />
                     <span asp-validation-for="SoKhung" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="control-label">Số Máy: </label>
-                    <input asp-for="SoMay" class="form-control input-register-form" id="Input_SoMay" pattern="/^[A-Za-z0-9 ]+$/" required />
+                    <input asp-for="SoMay" class="form-control input-register-form" id="Input_SoMay" required />
                     <span asp-validation-for="SoMay" class="text-danger"></span>
                 </div>
             </div>
