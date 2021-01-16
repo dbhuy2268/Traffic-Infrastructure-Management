@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>TẤT CẢ YÊU CẦU CỦA BẠN</h1>
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Tất cả yêu cầu của bạn</h1>
 
 @*<p>
         <a asp-action="Create">Create New</a>
@@ -15,39 +15,39 @@
 <script>
     var temp_chosenID = 0;
 </script>
-<div style="max-height: 500px; overflow-y: scroll; width: 2000px; margin-left: -20px;">
+<div style="height: 500px; overflow-y:auto; display:block; overflow-x:auto;">
     <table id="GetAllYeuCauXinTable">
         <thead>
             <tr>
                 <th style=" position: sticky; top: 0; padding-left: 5px;">
-                    @Html.DisplayNameFor(model => model.id)
+                    ID
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.TenChuSoHuu)
+                    Tên chủ sở hữu
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.CMND_HoChieu)
+                    CMND/Hộ chiếu
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.SDT)
+                    SDT
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.LoaiTaiSan)
+                    Loại tài sản
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.LoaiXe)
+                    Loại xe
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.NhanHieu)
+                    Nhãn hiệu
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.MauSon)
+                    Màu sơn
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.NamSanXuat)
+                    Năm sản xuất
                 </th>
                 <th style=" position: sticky; top: 0;">
-                    @Html.DisplayNameFor(model => model.DaXetDuyet)
+                    Đã xét duyệt
                 </th>
                 <th style=" position: sticky; top: 0;"></th>
             </tr>
@@ -235,7 +235,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     <button id="btn_duyetYeuCau" class="btn btn-primary" data-dismiss="modal" onclick="duyetYeuCau(temp_chosenID);">Duyệt</button>
-                    @*<button id="btn_khongDuyetYeuCau" class="btn btn-primary" data-dismiss="modal">Không duyệt</button>*@
                 </div>
             </div>
         </div>
