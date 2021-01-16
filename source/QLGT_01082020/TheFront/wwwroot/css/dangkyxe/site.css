@@ -1,8 +1,13 @@
 ﻿.our-button {
-    background-color: #FDCB6E;
+    background-color: #007BFF;
     border-radius: 15px;
     border: none;
     margin-left: 10px;
+    color: white;
+}
+
+.our-table-button:hover {
+    background-color: #0069D9
 }
 
 .our-table-button {
@@ -22,7 +27,7 @@
 }
 
 .button-active {
-    background-color: #FDCB6E;
+    background-color: #007BFF;
     cursor: pointer;
 }
 
@@ -32,13 +37,11 @@
 }
 
 .button-active:hover {
-    filter: brightness(110%);
-    font-weight: 600;
+    background-color: #0069D9;
 }
 
 .button-disable:hover {
     filter: none;
-    font-weight: 600;
 }
 
 .our-succeed-modal {
