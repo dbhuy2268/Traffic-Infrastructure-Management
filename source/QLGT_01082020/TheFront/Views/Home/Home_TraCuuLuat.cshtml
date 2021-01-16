@@ -7,15 +7,42 @@
 
 <h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Tra cứu luật</h1>
 
-<form method="post">
-    <div class="row form-group">
-        <div class="col-md-7">
-            <input asp-for="@Model.Text" class="form-control" id="TextSearchInput" placeholder="Nhập nội dung cần tra cứu" />
-        </div>
-        <div class="col-md-5">
-            <button class="btn btn-primary">Search</button>
-        </div>
-    </div>
+<style>
+    form.law-form, form.law-form button {
+        box-sizing: border-box;
+    }
+        form.law-form input[type=text] {
+            padding: 10px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+        }
+
+        form.law-form button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+            form.law-form button:hover {
+                background: #0b7dda;
+            }
+
+        form.law-form::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+</style>
+
+<form class="law-form" method="post">
+        <input asp-for="@Model.Text" placeholder="Nhập nội dung cần tra cứu" type="text" />
+        <button><i class="fas fa-search"></i></button>
 </form>
 
 <div style="height: 500px; overflow-y:auto; display:block; overflow-x:auto;">
