@@ -1,23 +1,23 @@
 ﻿@page
 @model PersonalDataModel
 @{
-    ViewData["Title"] = "Personal Data";
+    ViewData["Title"] = "Dữ liệu cá nhân";
     ViewData["ActivePage"] = ManageNavPages.PersonalData;
 }
 
-<h4>@ViewData["Title"]</h4>
+<h4 style="margin-bottom: 1em;">@ViewData["Title"]</h4>
 
 <div class="row">
     <div class="col-md-6">
-        <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+        <p>Tài khoản này chứa toàn bộ thông tin bạn đã cung cấp cho nhóm. Đây là nơi bạn có thể xoá chúng đi, bất cứ lúc nào.</p>
         <p>
-            <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
+            <strong>Khi bạn quyết định xoá dữ liệu, mọi thông tin sẽ không còn và không thể khôi phục nữa, kể cả tài khoản của bạn. Hãy cân nhắc.</strong>
         </p>
-        <form id="download-data" asp-page="DownloadPersonalData" method="post" class="form-group">
-            <button class="btn btn-primary" type="submit">Download</button>
+        <form style="margin-top:1em;" id="download-data" asp-page="DownloadPersonalData" method="post" class="form-group">
+            <button class="btn btn-primary" type="submit">Tải xuống thông tin</button>
         </form>
         <p>
-            <a id="delete" asp-page="DeletePersonalData" class="btn btn-primary">Delete</a>
+            <a style="margin-top:1em;" id="delete" asp-page="DeletePersonalData" class="btn btn-primary">Xoá</a>
         </p>
     </div>
 </div>

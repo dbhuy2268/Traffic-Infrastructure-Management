@@ -5,9 +5,8 @@
 }
 
 
-<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Phương tiện</h1>
-
-<div style="overflow-x: auto;">
+<h1 style="display:flex; justify-content:center; margin-top: 1.5em; margin-bottom: 1em;">Danh sách phương tiện đã đăng kiểm</h1>
+<div class="table-responsive-sm" style="height:500px; overflow-x:auto; overflow-y:auto;">
     <table class="table">
         <thead>
             <tr>
@@ -56,8 +55,8 @@
                     </td>
                     <td>
                         @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-                        @Html.ActionLink("Chi tiết phương tiện", "Details_DangKiem", new { id = item.id })
-                        @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        @Html.ActionLink("Xem chi tiết", "Details_DangKiem", new { id = item.id })
+                        @Html.ActionLink("Xem lịch sử đăng kiểm", "CheckHistory_DangKiem", new { id=item.id })
                     </td>
                 </tr>
             }

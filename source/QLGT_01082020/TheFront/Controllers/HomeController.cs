@@ -76,17 +76,15 @@ namespace TheFront.Controllers
             return View(ttdkiem);
         }
         [Authorize]
-        public async Task<IActionResult> CheckAppointment_DangKiem(int id)
+        public async Task<IActionResult> CheckAppointment_DangKiem()
         {
-            var phuongTien = new PhuongTiensModel();
             var ttlichhen = new List<ThongTinLichHenModel>();
             HttpClient client = _api.Initial();
-            HttpResponseMessage res = await client.GetAsync($"api/PhuongTiens/{id}");
+            HttpResponseMessage res = await client.GetAsync("api/ThongTinLichHen");
             if (res.IsSuccessStatusCode)
             {
                 var results = res.Content.ReadAsStringAsync().Result;
-                phuongTien = JsonConvert.DeserializeObject<PhuongTiensModel>(results);
-                ttlichhen = phuongTien.ThongTinLichHens.ToList();
+                ttlichhen = JsonConvert.DeserializeObject<List<ThongTinLichHenModel>>(results);
             }
             return View(ttlichhen);
         }
@@ -289,22 +287,22 @@ namespace TheFront.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<ThongTinLichHenModel> Create_LichHen(ThongTinLichHenModel o_LichHen)
+        public async Task<IActionResult> Create_LichHen(ThongTinLichHenModel o_LichHen)
         {
-            ThongTinLichHenModel LH = new ThongTinLichHenModel();
+            //ThongTinLichHenModel LH = new ThongTinLichHenModel();
             HttpClient client = _api.Initial();
-
+            o_LichHen.ngayDangKy = System.DateTime.Now;
             using (client)
             {
                 //Http Post
                 using (var postTask = await client.PostAsync("api/ThongTinLichHen", new StringContent(JsonConvert.SerializeObject(o_LichHen), Encoding.UTF8, "application/json")))
                 {
                     var api_response = await postTask.Content.ReadAsStringAsync();
-                    LH = JsonConvert.DeserializeObject<ThongTinLichHenModel>(api_response);
+                    //LH = JsonConvert.DeserializeObject<ThongTinLichHenModel>(api_response);
                 }
             }
-            //return RedirectToAction("Create");
-            return LH;
+            return RedirectToAction("Create_LichHen");
+            //return LH;
         }
 
         [Authorize]
